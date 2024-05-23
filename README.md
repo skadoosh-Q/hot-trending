@@ -12,6 +12,7 @@
  ├── main.php   # 入口文件, 调用`FetchHotData.php`或`FetchHotDataMulti.php`
  ├── FetchHotData.php       # 单进程执行
  ├── FetchHotDataMulti.php  # 多进程执行
+ ├── getHotData.php     # api; 将 📂articles 目录下的数据聚合json返回
  └── README.md
 ```
 
