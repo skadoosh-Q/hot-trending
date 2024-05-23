@@ -52,21 +52,21 @@ function mergeHotData($hotDataPathList) {
     foreach ($hotDataPathList as $fileName => $resultData) {
         $jsonContent = file_get_contents($resultData);
         if ($jsonContent === false) {
-            // 读取文件内容失败, 重试脚本获取数据
-            // echo '读取文件内容失败, 重试脚本获取数据' . $fileName . PHP_EOL;
+            // 读取文件内容失败
+            // echo '读取文件内容失败' . $fileName . PHP_EOL;
             continue;
         }
 
         $hotData = json_decode($jsonContent, true);
         if (json_last_error() !== JSON_ERROR_NONE) {
-            // 解析json错误, 重试脚本获取数据
-            // echo '解析json错误, 重试脚本获取数据' . $fileName . PHP_EOL;
+            // 解析json错误
+            // echo '解析json错误' . $fileName . PHP_EOL;
             continue;
         }
 
         if (!$hotData || !isset($hotData['data']) || !$hotData['data']) {
-            // 没数据结果, 重试脚本获取数据
-            // echo '没数据结果, 重试脚本获取数据' . $fileName . PHP_EOL;
+            // 没数据结果
+            // echo '没数据结果' . $fileName . PHP_EOL;
             continue;
         }
 
