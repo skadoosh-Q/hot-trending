@@ -40,6 +40,7 @@ function sougou(){
 		// 删除空格
 	    $title = $match[2];
 	    $url = $match[1];
+			$url = str_replace("amp;", "", $url);
 	    // 将标题和链接添加到结果数组
 	    $results[] = [
 	    		'index' => $index+1,
