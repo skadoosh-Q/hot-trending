@@ -1,0 +1,258 @@
+{
+    "success": true,
+    "title": "CSDN",
+    "subtitle": "热榜",
+    "update_time": "2024-05-24 12:03:00",
+    "data": [
+        {
+            "index": 1,
+            "title": "【机器学习数据可视化-07】波士顿房价预测数据分析",
+            "url": "https://blog.csdn.net/qq_38614074/article/details/137584244"
+        },
+        {
+            "index": 2,
+            "title": "【机器学习】—机器学习和NLP预训练模型探索之旅",
+            "url": "https://blog.csdn.net/2303_77720864/article/details/139159367"
+        },
+        {
+            "index": 3,
+            "title": "【机器学习】机器学习与大型预训练模型的前沿探索：跨模态理解与生成的新纪元",
+            "url": "https://blog.csdn.net/Easonmax/article/details/139125042"
+        },
+        {
+            "index": 4,
+            "title": "OpenFeign高级用法：缓存、QueryMap、MatrixVariable、CollectionFormat优雅地远程调用",
+            "url": "https://blog.csdn.net/qq_26664043/article/details/138399582"
+        },
+        {
+            "index": 5,
+            "title": "LangChain带你轻松玩转ChatGPT等大模型开发",
+            "url": "https://blog.csdn.net/herosunly/article/details/139152490"
+        },
+        {
+            "index": 6,
+            "title": "绿色智能：AI机器学习在环境保护中的深度应用与实践案例",
+            "url": "https://blog.csdn.net/g310773517/article/details/139154275"
+        },
+        {
+            "index": 7,
+            "title": "【SpringBoot】SpringBoot中防止接口重复提交（单机环境和分布式环境）",
+            "url": "https://blog.csdn.net/qq_61024956/article/details/139116838"
+        },
+        {
+            "index": 8,
+            "title": "使用TextIn文档解析工具为RAG开发提供更多可能性",
+            "url": "https://blog.csdn.net/JHXL_/article/details/139060609"
+        },
+        {
+            "index": 9,
+            "title": "【机器学习】基于核的机器学习算法（Kernel-based Algorithms）：原理，应用与优化",
+            "url": "https://blog.csdn.net/2301_77509762/article/details/139128227"
+        },
+        {
+            "index": 10,
+            "title": "【FFmpeg】编译不同平台的 FFmpeg 源码 ( 本地编译 与 交叉编译 | FFmpeg 指定目标平台的编译配置参数 | 配置目标 CPU 架构 | 配置目标操作系统 )",
+            "url": "https://blog.csdn.net/han1202012/article/details/139032397"
+        },
+        {
+            "index": 11,
+            "title": "Spring Boot 3.0：未来企业应用开发的基石",
+            "url": "https://blog.csdn.net/qq_32682301/article/details/139116458"
+        },
+        {
+            "index": 12,
+            "title": "2024电工杯杯数学建模AB题（附历年优秀论文+写作模板）参考论文+完整代码数据集",
+            "url": "https://blog.csdn.net/2301_77933700/article/details/139087343"
+        },
+        {
+            "index": 13,
+            "title": "matlab如何实现LDLT分解（改进的平方根法）",
+            "url": "https://blog.csdn.net/apple_74057836/article/details/139159338"
+        },
+        {
+            "index": 14,
+            "title": "『哈哥赠书 - 52期』-『LangChain技术解密：构建大模型应用的全景指南』",
+            "url": "https://blog.csdn.net/weixin_42250835/article/details/139123793"
+        },
+        {
+            "index": 15,
+            "title": "【好书分享第十一期】深入Rust标准库（文末送书）",
+            "url": "https://blog.csdn.net/a1657054242/article/details/139118017"
+        },
+        {
+            "index": 16,
+            "title": "操作系统第一章笔记",
+            "url": "https://blog.csdn.net/2301_80339238/article/details/139121351"
+        },
+        {
+            "index": 17,
+            "title": "【Hadoop】DataNode 数据盘进行磁盘DiskBalancer",
+            "url": "https://blog.csdn.net/qq_35995514/article/details/139087595"
+        },
+        {
+            "index": 18,
+            "title": "【PHP【实战训练】系统性学习】——最经典的web端头像上传，数据库内容安全精简",
+            "url": "https://blog.csdn.net/2301_77628600/article/details/138759172"
+        },
+        {
+            "index": 19,
+            "title": "【测试SQLite】测试SQLite支持的SQL语句分类",
+            "url": "https://blog.csdn.net/m0_57532432/article/details/139094633"
+        },
+        {
+            "index": 20,
+            "title": "基于Java的地震震中附近城市分析实战",
+            "url": "https://blog.csdn.net/yelangkingwuzuhu/article/details/139099996"
+        },
+        {
+            "index": 21,
+            "title": "【DevOps】深入理解 Nginx Location 块：配置示例与应用场景详解",
+            "url": "https://blog.csdn.net/benshu_001/article/details/139104657"
+        },
+        {
+            "index": 22,
+            "title": "MATLAB计算机视觉与深度学习实战",
+            "url": "https://blog.csdn.net/qq_44273429/article/details/139121112"
+        },
+        {
+            "index": 23,
+            "title": "如何在 Elasticsearch 中选择精确 kNN 搜索和近似 kNN 搜索",
+            "url": "https://blog.csdn.net/UbuntuTouch/article/details/139109384"
+        },
+        {
+            "index": 24,
+            "title": "【Linux】进程通信实战 —— 进程池项目",
+            "url": "https://blog.csdn.net/JLX_1/article/details/139130557"
+        },
+        {
+            "index": 25,
+            "title": "15 VUE学习：插槽slot",
+            "url": "https://blog.csdn.net/sixpp/article/details/139141500"
+        },
+        {
+            "index": 26,
+            "title": "Linux信号：信号的保存",
+            "url": "https://blog.csdn.net/2201_75880188/article/details/138792742"
+        },
+        {
+            "index": 27,
+            "title": "文心智能体平台：想象即现实（快来开发你的第一个专属AI 智能体助手吧）",
+            "url": "https://blog.csdn.net/qq_57761637/article/details/139130916"
+        },
+        {
+            "index": 28,
+            "title": "深度解析 Spring 源码：揭秘JDK动态代理的奥秘",
+            "url": "https://blog.csdn.net/qq_51601665/article/details/139125573"
+        },
+        {
+            "index": 29,
+            "title": "AI代码提示工具可用于教学功能示例——MySQL",
+            "url": "https://blog.csdn.net/feng8403000/article/details/139158883"
+        },
+        {
+            "index": 30,
+            "title": "7 Series FPGAs Integrated Block for PCI Express IP核 Advanced模式配置详解（一）",
+            "url": "https://blog.csdn.net/u011565038/article/details/139134059"
+        },
+        {
+            "index": 31,
+            "title": "整合LlamaIndex与LangChain构建高级的查询处理系统",
+            "url": "https://blog.csdn.net/m0_46510245/article/details/139110804"
+        },
+        {
+            "index": 32,
+            "title": "Ansible自动化运维中的file文件模块模块应用详解",
+            "url": "https://blog.csdn.net/jxjdhdnd/article/details/138952054"
+        },
+        {
+            "index": 33,
+            "title": "【XSS & CSRF 】泄露cookie——以DVWA-High为例",
+            "url": "https://blog.csdn.net/Mr_Fmnwon/article/details/139129120"
+        },
+        {
+            "index": 34,
+            "title": "2024年高考考务人员网上培训参考答案",
+            "url": "https://blog.csdn.net/xcntime/article/details/139137363"
+        },
+        {
+            "index": 35,
+            "title": "高通 Android 12/13冻结屏幕",
+            "url": "https://blog.csdn.net/qq_15950325/article/details/139152836"
+        },
+        {
+            "index": 36,
+            "title": "SpringBootWeb 篇-深入了解 Mybatis 概念、数据库连接池、环境配置和 Lombok 工具包",
+            "url": "https://blog.csdn.net/Tingfeng__/article/details/139097158"
+        },
+        {
+            "index": 37,
+            "title": "【网络协议】网络层--IP协议",
+            "url": "https://blog.csdn.net/2202_75795446/article/details/139107452"
+        },
+        {
+            "index": 38,
+            "title": "[Algorithm][动态规划][路径问题][不同路径][不同路径Ⅱ][珠宝的最高价值]详细讲解",
+            "url": "https://blog.csdn.net/qq_37281656/article/details/139159935"
+        },
+        {
+            "index": 39,
+            "title": "【制作100个unity游戏之27】使用unity复刻经典游戏《植物大战僵尸》，制作属于自己的植物大战僵尸随机版和杂交版1（附带项目源码）",
+            "url": "https://blog.csdn.net/qq_36303853/article/details/139125944"
+        },
+        {
+            "index": 40,
+            "title": "Linux——进程信号(一)",
+            "url": "https://blog.csdn.net/m0_74515566/article/details/139123089"
+        },
+        {
+            "index": 41,
+            "title": "漫画|基于SprinBoot+vue的漫画网站(源码+数据库+文档)",
+            "url": "https://blog.csdn.net/weixin_45630258/article/details/139148351"
+        },
+        {
+            "index": 42,
+            "title": "物体检测算法-R-CNN，SSD，YOLO",
+            "url": "https://blog.csdn.net/qq_41286360/article/details/139106479"
+        },
+        {
+            "index": 43,
+            "title": "基于MetaGPT构建LLM多智能体",
+            "url": "https://blog.csdn.net/qq_45590504/article/details/139101098"
+        },
+        {
+            "index": 44,
+            "title": "开源大模型与闭源大模型",
+            "url": "https://blog.csdn.net/ak2111/article/details/139123479"
+        },
+        {
+            "index": 45,
+            "title": "web学习",
+            "url": "https://blog.csdn.net/s2933921910/article/details/139135599"
+        },
+        {
+            "index": 46,
+            "title": "“AIGC行业投资时机分析：评估当前市场发展阶段与未来需求趋势“",
+            "url": "https://blog.csdn.net/u014727709/article/details/139017246"
+        },
+        {
+            "index": 47,
+            "title": "Windows电脑搭建自己的Plex流媒体服务并远程播放本地视频",
+            "url": "https://blog.csdn.net/2301_77485708/article/details/139154485"
+        },
+        {
+            "index": 48,
+            "title": "2024电工杯数学建模A题思路+模型+代码",
+            "url": "https://blog.csdn.net/weixin_45499067/article/details/139156443"
+        },
+        {
+            "index": 49,
+            "title": "【计算机网络】第三章——封装成帧",
+            "url": "https://blog.csdn.net/m0_74352571/article/details/139079321"
+        },
+        {
+            "index": 50,
+            "title": "【云原生】kubernetes中的service原理、应用实战案例解析",
+            "url": "https://blog.csdn.net/littlefun591/article/details/139147828"
+        }
+    ]
+}

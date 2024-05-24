@@ -1,0 +1,7 @@
+{
+  "rootFontSize": 75,
+  "vwDesign": 750,
+  "fixedDigits": 3,
+  "remHover": true,
+  "ingoresViaCommand": [ "1px", "0.5px" ]
+}

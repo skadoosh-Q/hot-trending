@@ -2,7 +2,30 @@
 date_default_timezone_set('Asia/Shanghai');
 header("Content-type:application/json; charset=utf-8");
 
-$resultDirectory = __DIR__ . '/articles';
+$resultDirectory = __DIR__ . '/../articles';
+
+function returnJsonFail($msg = 'fail', $data = null, $code = 500) {
+    $_res = [
+        "code" => $code,
+        "msg" => $msg,
+        "data" => $data
+    ];
+    $json = json_encode($_res, JSON_UNESCAPED_UNICODE + JSON_UNESCAPED_SLASHES);
+    echo $json;
+    exit();
+}
+
+function returnJsonSuccess($data = null, $msg='success', $code = 200) {
+    $_res = [
+        "code" => $code,
+        "msg" => $msg,
+        "data" => $data
+    ];
+    // $json = json_encode($_res, JSON_UNESCAPED_UNICODE | JSON_PRETTY_PRINT);
+    $json = json_encode($_res, JSON_UNESCAPED_UNICODE + JSON_UNESCAPED_SLASHES);
+    echo $json;
+    exit();
+}
 
 function getAllData() {
     global $resultDirectory;
@@ -16,8 +39,7 @@ function getAllData() {
         $pathYearMonth = $resultDirectory . '/' . $dateYearMonth;
         $pathYearMonthDay = $pathYearMonth . '/' . $dateDay;
         if (!is_dir($pathYearMonthDay)) {
-            echo "今日目录未创建" . PHP_EOL;
-            exit();
+            returnJsonFail("今日热点数据未抓取");
         }
 
         if ($handle = opendir($pathYearMonthDay)) {
@@ -35,14 +57,10 @@ function getAllData() {
             }
             closedir($handle);
         } else {
-            echo "无法打开目录" . PHP_EOL;
-            echo "停止执行脚本";
-            exit();
+            returnJsonFail("查找今日热点数据失败");
         }
     } else {
-        echo "目录不存在" . PHP_EOL;
-        echo "停止执行脚本";
-        exit();
+        returnJsonFail("热点数据不存在");
     }
     return $allResultData;
 }
@@ -78,14 +96,6 @@ function mergeHotData($hotDataPathList) {
 
 $resultDataPath = getAllData();
 $allData = mergeHotData($resultDataPath);
-// var_dump($allData);
-
-$_res = [
-    "success" => true,
-    "data" => $allData
-];
-$json = json_encode($_res, JSON_UNESCAPED_UNICODE | JSON_PRETTY_PRINT);
-$json = str_replace('\/', '/', $json);
-echo $json;
+returnJsonSuccess($allData);
 
 ?>

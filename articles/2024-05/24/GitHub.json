@@ -1,0 +1,158 @@
+{
+    "success": true,
+    "title": "GitHub",
+    "subtitle": "热榜",
+    "update_time": "2024-05-24 12:03:00",
+    "data": [
+        {
+            "index": 1,
+            "title": "Codium-ai/cover-agent",
+            "url": "https://github.com/Codium-ai/cover-agent",
+            "desc": "CodiumAI Cover-Agent: An AI-Powered Tool for Automated Test Generation and Code Coverage Enhancement! 💻🤖🧪🐞"
+        },
+        {
+            "index": 2,
+            "title": "it-ebooks-0/geektime-books",
+            "url": "https://github.com/it-ebooks-0/geektime-books",
+            "desc": "📚 极客时间电子书"
+        },
+        {
+            "index": 3,
+            "title": "NaiboWang/EasySpider",
+            "url": "https://github.com/NaiboWang/EasySpider",
+            "desc": "A visual no-code/code-free web crawler/spider易采集：一个可视化浏览器自动化测试/数据采集/爬虫软件，可以无代码图形化的设计和执行爬虫任务。别名：ServiceWrapper面向Web应用的智能化服务封装系统。"
+        },
+        {
+            "index": 4,
+            "title": "mlc-ai/web-llm",
+            "url": "https://github.com/mlc-ai/web-llm",
+            "desc": "Bringing large-language models and chat to web browsers. Everything runs inside the browser with no server support."
+        },
+        {
+            "index": 5,
+            "title": "JetBrains/kotlin",
+            "url": "https://github.com/JetBrains/kotlin",
+            "desc": "The Kotlin Programming Language."
+        },
+        {
+            "index": 6,
+            "title": "OpenBMB/MiniCPM-V",
+            "url": "https://github.com/OpenBMB/MiniCPM-V",
+            "desc": "MiniCPM-Llama3-V 2.5: A GPT-4V Level Multimodal LLM on Your Phone"
+        },
+        {
+            "index": 7,
+            "title": "microsoft/PowerToys",
+            "url": "https://github.com/microsoft/PowerToys",
+            "desc": "Windows system utilities to maximize productivity"
+        },
+        {
+            "index": 8,
+            "title": "hudy9x/namviek",
+            "url": "https://github.com/hudy9x/namviek",
+            "desc": "The open-source project manager for tiny teams"
+        },
+        {
+            "index": 9,
+            "title": "ashishps1/awesome-system-design-resources",
+            "url": "https://github.com/ashishps1/awesome-system-design-resources",
+            "desc": "Learn System Design concepts and prepare for interviews using free resources."
+        },
+        {
+            "index": 10,
+            "title": "amalmurali47/git_rce",
+            "url": "https://github.com/amalmurali47/git_rce",
+            "desc": "Exploit PoC for CVE-2024-32002"
+        },
+        {
+            "index": 11,
+            "title": "practical-tutorials/project-based-learning",
+            "url": "https://github.com/practical-tutorials/project-based-learning",
+            "desc": "Curated list of project-based tutorials"
+        },
+        {
+            "index": 12,
+            "title": "DataTalksClub/data-engineering-zoomcamp",
+            "url": "https://github.com/DataTalksClub/data-engineering-zoomcamp",
+            "desc": "Free Data Engineering course!"
+        },
+        {
+            "index": 13,
+            "title": "wy876/POC",
+            "url": "https://github.com/wy876/POC",
+            "desc": "收集整理漏洞EXp/POC,大部分漏洞来源网络，目前收集整理了500多个poc/exp，长期更新。"
+        },
+        {
+            "index": 14,
+            "title": "khoj-ai/khoj",
+            "url": "https://github.com/khoj-ai/khoj",
+            "desc": "Your AI second brain. A copilot to get answers to your questions, whether they be from your own notes or from the internet. Use powerful, online (e.g gpt4) or private, local (e.g mistral) LLMs. Self-host locally or use our web app. Access from Obsidian, Emacs, Desktop app, Web or Whatsapp."
+        },
+        {
+            "index": 15,
+            "title": "jwasham/coding-interview-university",
+            "url": "https://github.com/jwasham/coding-interview-university",
+            "desc": "A complete computer science study plan to become a software engineer."
+        },
+        {
+            "index": 16,
+            "title": "psf/requests",
+            "url": "https://github.com/psf/requests",
+            "desc": "A simple, yet elegant, HTTP library."
+        },
+        {
+            "index": 17,
+            "title": "danielmiessler/fabric",
+            "url": "https://github.com/danielmiessler/fabric",
+            "desc": "fabric is an open-source framework for augmenting humans using AI. It provides a modular framework for solving specific problems using a crowdsourced set of AI prompts that can be used anywhere."
+        },
+        {
+            "index": 18,
+            "title": "microsoft/Phi-3CookBook",
+            "url": "https://github.com/microsoft/Phi-3CookBook",
+            "desc": "This is a Phi-3 book for getting started with Phi-3. Phi-3, a family of open AI models developed by Microsoft. Phi-3 models are the most capable and cost-effective small language models (SLMs) available, outperforming models of the same size and next size up across a variety of language, reasoning, coding, and math benchmarks."
+        },
+        {
+            "index": 19,
+            "title": "ItzCrazyKns/Perplexica",
+            "url": "https://github.com/ItzCrazyKns/Perplexica",
+            "desc": "Perplexica is an AI-powered search engine. It is an Open source alternative to Perplexity AI"
+        },
+        {
+            "index": 20,
+            "title": "gitbutlerapp/gitbutler",
+            "url": "https://github.com/gitbutlerapp/gitbutler",
+            "desc": "The GitButler version control client, backed by Git, powered by Tauri/Rust/Svelte"
+        },
+        {
+            "index": 21,
+            "title": "folke/ts-comments.nvim",
+            "url": "https://github.com/folke/ts-comments.nvim",
+            "desc": "Tiny plugin to enhance Neovim's native comments"
+        },
+        {
+            "index": 22,
+            "title": "triton-lang/triton",
+            "url": "https://github.com/triton-lang/triton",
+            "desc": "Development repository for the Triton language and compiler"
+        },
+        {
+            "index": 23,
+            "title": "rashadphz/farfalle",
+            "url": "https://github.com/rashadphz/farfalle",
+            "desc": "🔍 AI search engine - self-host with local or cloud LLMs"
+        },
+        {
+            "index": 24,
+            "title": "solidjs/solid-start",
+            "url": "https://github.com/solidjs/solid-start",
+            "desc": "SolidStart, the Solid app framework"
+        },
+        {
+            "index": 25,
+            "title": "usebruno/bruno",
+            "url": "https://github.com/usebruno/bruno",
+            "desc": "Opensource IDE For Exploring and Testing Api's (lightweight alternative to postman/insomnia)"
+        }
+    ]
+}
