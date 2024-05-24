@@ -80,10 +80,16 @@
             font-size: 16Px;
             display: flex;
             align-items: center;
+            justify-content: space-between;
         }
+        .card-wrap .card-item-wrap .card .card-header .left { display: flex; }
+        .card-wrap .card-item-wrap .card .card-header .right { display: flex; }
         .card-wrap .card-item-wrap .card .card-header .hot-ico {
             height: 18Px;
             margin-right: .053rem;
+        }
+        .card-wrap .card-item-wrap .card .card-header .last-update-time {
+            font-size: 12Px;
         }
         .card-wrap .card-item-wrap .card .card-body {
             padding: 0 .267rem .213rem;
@@ -132,6 +138,7 @@
             text-decoration: none;
             line-height: .28rem;
         }
+        .card-wrap .card-item-wrap .card .card-body .hot-body .hot-item a.visited { color: #f1b0b4; }
         .card-wrap .card-item-wrap .card .card-body .hot-body .hot-item a:hover {
             color: #f1404b;
         }
@@ -146,14 +153,19 @@
                     <div class="card-item-wrap" v-for="platformHot, platformIdx in hotData" :key="'platform' + platformIdx">
                         <div class="card">
                             <div class="card-header">
-                                <img class="hot-ico" :src="getHotIco(platformIdx)" alt="">
-                                <div class="title">{{platformHot.title}}</div>
+                                <div class="left">
+                                    <img class="hot-ico" :src="getHotIco(platformIdx)" alt="">
+                                    <div class="title">{{platformHot.title}}</div>
+                                </div>
+                                <div class="right">
+                                    <div class="last-update-time">{{ formatDateToMinutes(platformHot.update_time) }}</div>
+                                </div>
                             </div>
                             <div class="card-body">
                                 <div class="hot-body">
                                     <div class="hot-item" v-for="item, idx in platformHot.data" :key="'hot' + item">
                                         <span class="hot-rank">{{ item.index }}</span>
-                                        <a target="_blank" :href="item.url">{{ item.title ? item.title : item.desc }}</a>
+                                        <a :class="{'visited': clickHistory[platformIdx] && clickHistory[platformIdx][idx]}" target="_blank" :href="item.url" @click="clickHotHref(platformIdx, idx)">{{ item.title ? item.title : item.desc }}</a>
                                     </div>
                                 </div>
                             </div>
@@ -209,14 +221,14 @@
                     "wuaipojie",
                     "GitHub",
                     "xiaohongshu", // 小红书
-                    "zhidemai", // 什么值得买
+                    "shenmezhidemai", // 什么值得买
                     "douban", // 豆瓣
                     "kr36",
                     "v2ex",
                     "history",
                     "youxiputao", // 游戏葡萄
                     "shaoshupai",
-                    "itHome",   // it之家
+                    "ithome",   // it之家
                     "wxRead",   // 微信读书
                     "dsb",  // 电商报
                     "hupu",
@@ -242,14 +254,14 @@
                     "wuaipojie": "wuaipojie.png",
                     "GitHub": "",
                     "xiaohongshu": "xiaohongshu.ico",
-                    "zhidemai": "smzdm.png",
+                    "shenmezhidemai": "smzdm.png",
                     "douban": "douban.png",
                     "kr36": "36kr.png",
                     "v2ex": "",
                     "history": "lssdjt.png",
                     "youxiputao": "youxiputao.ico",
                     "shaoshupai": "sspai.png",
-                    "itHome": "ithome.png",
+                    "ithome": "ithome.png",
                     "wxRead": "weread.png",
                     "dsb": "dsb.png",
                     "hupu": "hupu.png",
@@ -261,7 +273,8 @@
                     "360search": "",
                     "jinritoutiao": "",
                     "qqnews": "",
-                }
+                },
+                clickHistory: {}
             },
             computed: {
                 getHotIco() {
@@ -269,6 +282,7 @@
                     const _hotData = this.hotData;
                     return (hotDataIdx) => {
                         if ( _hotData && _hotData[hotDataIdx] && _hotData[hotDataIdx].key) {
+                            if (!_hotDataIco[_hotData[hotDataIdx].key]) return '';
                             return './images/' + _hotDataIco[_hotData[hotDataIdx].key];
                         }
                         return '';
@@ -306,6 +320,32 @@
                         this.openToast('服务状态不可用');
                     });
                 },
+                formatDateToMinutes(dateString) {
+                    if (!dateString) return '';
+                    try {
+                        const dateStr = dateString.replace(/\-/g, "/");
+                        const date = new Date(dateStr);
+                        const year = date.getFullYear();
+                        const month = String(date.getMonth() + 1).padStart(2, '0');
+                        const day = String(date.getDate()).padStart(2, '0');
+                        const hours = String(date.getHours()).padStart(2, '0');
+                        const minutes = String(date.getMinutes()).padStart(2, '0');
+
+                        return `${year}-${month}-${day} ${hours}:${minutes}`;
+                    } catch (error) {
+                        console.log('formatDateToMinutes Error: ', error);
+                        return '';
+                    }
+                   
+                },
+                clickHotHref(levelIdx1, levelIdx2) {
+                    if (!this.clickHistory[levelIdx1]) {
+                        this.$set(this.clickHistory, levelIdx1, {});
+                    }
+                    if (!this.clickHistory[levelIdx1][levelIdx2]) {
+                        this.$set(this.clickHistory[levelIdx1], levelIdx2, true);
+                    }
+                }
             },
         });
     </script>
