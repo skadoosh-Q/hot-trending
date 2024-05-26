@@ -6,11 +6,11 @@
 date_default_timezone_set('Asia/Shanghai');
 
 /** 单进程执行 */
-// include_once('./FetchHotData.php');
+// include_once(__DIR__ . '/FetchHotData.php');
 // new FetchHotData();
 
 /** 多进程执行 */
-include_once('./FetchHotDataMulti.php');
+include_once(__DIR__ . '/FetchHotDataMulti.php');
 new FetchHotDataMulti();
 
 ?>

@@ -1,5 +1,5 @@
 <?php
-include_once('./FetchHotData.php');
+include_once(__DIR__ . '/FetchHotData.php');
 
 /**
  * 多进程版本
