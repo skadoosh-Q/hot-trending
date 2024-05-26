@@ -219,9 +219,9 @@
             { "key": "weibo", "title": "微博" },
             { "key": "douyin", "title": "抖音" },
             { "key": "zhihu", "title": "知乎热榜" }, 
+            { "key": "baidu", "title": "百度热点" },
             { "key": "bili_all", "title": "哔哩哔哩全站日榜" }, 
             { "key": "acfun", "title": "ACFun" }, 
-            { "key": "baidu", "title": "百度热点" }, 
             { "key": "xiaohongshu", "title": "小红书" },
             { "key": "shenmezhidemai", "title": "什么值得买" },
             { "key": "douban", "title": "豆瓣" },
@@ -262,9 +262,9 @@
                     "weibo": "weibo.png",
                     "douyin": "douyin.png",
                     "zhihu": "zhihu.png",
+                    "baidu": "baidu.png",
                     "bili_all": "bilibili.png",
                     "acfun": "acfun.png",
-                    "baidu": "baidu.png",
                     "wuaipojie": "wuaipojie.png",
                     "xiaohongshu": "xiaohongshu.png",
                     "shenmezhidemai": "smzdm.png",
@@ -321,7 +321,6 @@
                     if (themModeVal === 'light' || themModeVal === 'dark') {
                         setThemeVal = themModeVal;   
                     } else {
-                        console.log('mediaQueryThem',mediaQueryThem.matches, themModeVal);
                         setThemeVal = mediaQueryThem.matches ? "light" : "dark";
                     }
                     document.documentElement.classList.add(setThemeVal);
@@ -339,7 +338,7 @@
                     }, time);
                 },
                 getList() {
-                    axios.get('http://hot-trending.nat.deq.local/api/getHotData.php')
+                    axios.get(document.location.href + 'api/getHotData.php')
                     .then((res) => {
                         const resData = res.data;
                         if (resData.code !== 200) {
