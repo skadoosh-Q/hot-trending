@@ -1,0 +1,39 @@
+获取所有脚本, 共: 25个
+开始: 0 结束: 8
+开始: 9 结束: 17
+开始: 18 结束: 24
+准备写入: 解析 $content 错误: 
+Warning: file_get_contents(https://www.v2ex.com/?tab=hot): failed to open stream: Connection refused in /Users/deq/Documents/my_code/my_projects/php/api_hot_trending/script/v2ex.php on line 14
+{
+    "success": true,
+    "title": "V2EX",
+    "subtitle": "今日热议主题",
+    "update_time": "2024-05-25 22:52:30",
+    "data": []
+}
+准备写入: $content 异常, 但上次数据正常, 本次不覆盖更新;
+准备写入: $content 中 data 没数据: {
+    "success": true,
+    "title": "吾爱破解",
+    "subtitle": "热榜",
+    "update_time": "2024-05-25 22:52:31",
+    "data": []
+}
+进程: 83723 已退出, 退出状态码为: 0
+进程: 83723 已退出, 是通过接受信号而中断的
+
+进程: 83724 已退出, 退出状态码为: 0
+进程: 83724 已退出, 是通过接受信号而中断的
+
+进程: 83726 已退出, 退出状态码为: 0
+进程: 83726 已退出, 是通过接受信号而中断的
+
+获取所有结果, 共: 25个
+没数据结果, 重试脚本获取数据wuaipojie
+准备写入: $content 中 data 没数据: {
+    "success": true,
+    "title": "吾爱破解",
+    "subtitle": "热榜",
+    "update_time": "2024-05-25 22:52:35",
+    "data": []
+}

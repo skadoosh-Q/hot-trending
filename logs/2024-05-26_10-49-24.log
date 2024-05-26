@@ -1,0 +1,83 @@
+获取所有脚本, 共: 25个
+开始: 0 结束: 8
+开始: 9 结束: 17
+开始: 18 结束: 24
+准备写入: 解析 $content 错误: 
+Warning: file_get_contents(https://www.v2ex.com/?tab=hot): failed to open stream: Connection refused in /Users/deq/Documents/my_code/my_projects/php/api_hot_trending/script/v2ex.php on line 14
+{
+    "success": true,
+    "title": "V2EX",
+    "subtitle": "今日热议主题",
+    "update_time": "2024-05-26 10:49:25",
+    "data": []
+}
+准备写入: $content 中 data 没数据: {
+    "success": true,
+    "title": "吾爱破解",
+    "subtitle": "热榜",
+    "update_time": "2024-05-26 10:49:27",
+    "data": []
+}
+准备写入: $content 中 data 没数据: {
+    "success": true,
+    "title": "虎扑",
+    "subtitle": "虎扑热榜-篮球-足球-步行街",
+    "update_time": "2024-05-26 10:49:28",
+    "data": []
+}
+准备写入: 解析 $content 错误: 
+Notice: Trying to access array offset on value of type null in /Users/deq/Documents/my_code/my_projects/php/api_hot_trending/script/anquanke.php on line 34
+
+Notice: Trying to access array offset on value of type null in /Users/deq/Documents/my_code/my_projects/php/api_hot_trending/script/anquanke.php on line 34
+
+Warning: Invalid argument supplied for foreach() in /Users/deq/Documents/my_code/my_projects/php/api_hot_trending/script/anquanke.php on line 34
+{
+    "success": true,
+    "title": "安全客",
+    "subtitle": "热榜",
+    "update_time": "2024-05-26 10:49:38",
+    "data": []
+}
+进程: 2416 已退出, 退出状态码为: 0
+进程: 2416 已退出, 是通过接受信号而中断的
+
+进程: 2417 已退出, 退出状态码为: 0
+进程: 2417 已退出, 是通过接受信号而中断的
+
+进程: 2418 已退出, 退出状态码为: 0
+进程: 2418 已退出, 是通过接受信号而中断的
+
+获取所有结果, 共: 25个
+没数据结果, 重试脚本获取数据wuaipojie
+解析json错误, 重试脚本获取数据v2ex
+没数据结果, 重试脚本获取数据hupu
+解析json错误, 重试脚本获取数据anquanke
+准备写入: $content 中 data 没数据: {
+    "success": true,
+    "title": "吾爱破解",
+    "subtitle": "热榜",
+    "update_time": "2024-05-26 10:49:40",
+    "data": []
+}
+准备写入: 解析 $content 错误: 
+Warning: file_get_contents(https://www.v2ex.com/?tab=hot): failed to open stream: Connection refused in /Users/deq/Documents/my_code/my_projects/php/api_hot_trending/script/v2ex.php on line 14
+{
+    "success": true,
+    "title": "V2EX",
+    "subtitle": "今日热议主题",
+    "update_time": "2024-05-26 10:49:41",
+    "data": []
+}
+准备写入: 解析 $content 错误: 
+Notice: Trying to access array offset on value of type null in /Users/deq/Documents/my_code/my_projects/php/api_hot_trending/script/anquanke.php on line 34
+
+Notice: Trying to access array offset on value of type null in /Users/deq/Documents/my_code/my_projects/php/api_hot_trending/script/anquanke.php on line 34
+
+Warning: Invalid argument supplied for foreach() in /Users/deq/Documents/my_code/my_projects/php/api_hot_trending/script/anquanke.php on line 34
+{
+    "success": true,
+    "title": "安全客",
+    "subtitle": "热榜",
+    "update_time": "2024-05-26 10:49:51",
+    "data": []
+}

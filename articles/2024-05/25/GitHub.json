@@ -1,0 +1,158 @@
+{
+    "success": true,
+    "title": "GitHub",
+    "subtitle": "热榜",
+    "update_time": "2024-05-25 22:52:35",
+    "data": [
+        {
+            "index": 1,
+            "title": "Codium-ai/cover-agent",
+            "url": "https://github.com/Codium-ai/cover-agent",
+            "desc": "CodiumAI Cover-Agent: An AI-Powered Tool for Automated Test Generation and Code Coverage Enhancement! 💻🤖🧪🐞"
+        },
+        {
+            "index": 2,
+            "title": "khoj-ai/khoj",
+            "url": "https://github.com/khoj-ai/khoj",
+            "desc": "Your AI second brain. A copilot to get answers to your questions, whether they be from your own notes or from the internet. Use powerful, online (e.g gpt4) or private, local (e.g llama3) LLMs. Self-host locally or use our cloud instance. Access from Obsidian, Emacs, Desktop app, Web or Whatsapp."
+        },
+        {
+            "index": 3,
+            "title": "dream-num/univer",
+            "url": "https://github.com/dream-num/univer",
+            "desc": "Univer is an open-source alternative to Google Sheets, Slides, and Docs"
+        },
+        {
+            "index": 4,
+            "title": "ItzCrazyKns/Perplexica",
+            "url": "https://github.com/ItzCrazyKns/Perplexica",
+            "desc": "Perplexica is an AI-powered search engine. It is an Open source alternative to Perplexity AI"
+        },
+        {
+            "index": 5,
+            "title": "mlabonne/llm-course",
+            "url": "https://github.com/mlabonne/llm-course",
+            "desc": "Course to get into Large Language Models (LLMs) with roadmaps and Colab notebooks."
+        },
+        {
+            "index": 6,
+            "title": "DataExpert-io/data-engineer-handbook",
+            "url": "https://github.com/DataExpert-io/data-engineer-handbook",
+            "desc": "This is a repo with links to everything you'd ever want to learn about data engineering"
+        },
+        {
+            "index": 7,
+            "title": "it-ebooks-0/geektime-books",
+            "url": "https://github.com/it-ebooks-0/geektime-books",
+            "desc": "📚 极客时间电子书"
+        },
+        {
+            "index": 8,
+            "title": "codecrafters-io/build-your-own-x",
+            "url": "https://github.com/codecrafters-io/build-your-own-x",
+            "desc": "Master programming by recreating your favorite technologies from scratch."
+        },
+        {
+            "index": 9,
+            "title": "CADmium-Co/CADmium",
+            "url": "https://github.com/CADmium-Co/CADmium",
+            "desc": "A CAD program that runs in the browser"
+        },
+        {
+            "index": 10,
+            "title": "searxng/searxng",
+            "url": "https://github.com/searxng/searxng",
+            "desc": "SearXNG is a free internet metasearch engine which aggregates results from various search services and databases. Users are neither tracked nor profiled."
+        },
+        {
+            "index": 11,
+            "title": "solidjs/solid-start",
+            "url": "https://github.com/solidjs/solid-start",
+            "desc": "SolidStart, the Solid app framework"
+        },
+        {
+            "index": 12,
+            "title": "OpenBMB/MiniCPM-V",
+            "url": "https://github.com/OpenBMB/MiniCPM-V",
+            "desc": "MiniCPM-Llama3-V 2.5: A GPT-4V Level Multimodal LLM on Your Phone"
+        },
+        {
+            "index": 13,
+            "title": "wy876/POC",
+            "url": "https://github.com/wy876/POC",
+            "desc": "收集整理漏洞EXp/POC,大部分漏洞来源网络，目前收集整理了500多个poc/exp，长期更新。"
+        },
+        {
+            "index": 14,
+            "title": "lvgl/lvgl",
+            "url": "https://github.com/lvgl/lvgl",
+            "desc": "Embedded graphics library to create beautiful UIs for any MCU, MPU and display type."
+        },
+        {
+            "index": 15,
+            "title": "apache/flink-cdc",
+            "url": "https://github.com/apache/flink-cdc",
+            "desc": "Flink CDC is a streaming data integration tool"
+        },
+        {
+            "index": 16,
+            "title": "chiteroman/PlayIntegrityFix",
+            "url": "https://github.com/chiteroman/PlayIntegrityFix",
+            "desc": "Fix Play Integrity (and SafetyNet) verdicts."
+        },
+        {
+            "index": 17,
+            "title": "Admiral-Billy/Pokerogue-App",
+            "url": "https://github.com/Admiral-Billy/Pokerogue-App",
+            "desc": "An app to play Pokerogue.net in an app window. Wow!"
+        },
+        {
+            "index": 18,
+            "title": "nucleuscloud/neosync",
+            "url": "https://github.com/nucleuscloud/neosync",
+            "desc": "Open source data anonymization and synthetic data orchestration for developers. Create high fidelity synthetic data and sync it across your environments."
+        },
+        {
+            "index": 19,
+            "title": "W01fh4cker/CVE-2024-21683-RCE",
+            "url": "https://github.com/W01fh4cker/CVE-2024-21683-RCE",
+            "desc": "CVE-2024-21683 Confluence Post Auth RCE"
+        },
+        {
+            "index": 20,
+            "title": "microsoft/PowerToys",
+            "url": "https://github.com/microsoft/PowerToys",
+            "desc": "Windows system utilities to maximize productivity"
+        },
+        {
+            "index": 21,
+            "title": "ragapp/ragapp",
+            "url": "https://github.com/ragapp/ragapp",
+            "desc": "The easiest way to use Agentic RAG in any enterprise"
+        },
+        {
+            "index": 22,
+            "title": "ente-io/ente",
+            "url": "https://github.com/ente-io/ente",
+            "desc": "Fully open source, End to End Encrypted alternative to Google Photos and Apple Photos"
+        },
+        {
+            "index": 23,
+            "title": "dotnet/aspire",
+            "url": "https://github.com/dotnet/aspire",
+            "desc": "An opinionated, cloud ready stack for building observable, production ready, distributed applications in .NET"
+        },
+        {
+            "index": 24,
+            "title": "ToolJet/ToolJet",
+            "url": "https://github.com/ToolJet/ToolJet",
+            "desc": "Low-code platform for building business applications. Connect to databases, cloud storages, GraphQL, API endpoints, Airtable, Google sheets, OpenAI, etc and build apps using drag and drop application builder. Built using JavaScript/TypeScript. 🚀"
+        },
+        {
+            "index": 25,
+            "title": "jordan-cutler/path-to-senior-engineer-handbook",
+            "url": "https://github.com/jordan-cutler/path-to-senior-engineer-handbook",
+            "desc": "All the resources you need to get to Senior Engineer and beyond"
+        }
+    ]
+}

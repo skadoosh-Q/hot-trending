@@ -3,11 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1,maximum-scale=1,minimum-scale=1,viewport-fit=cover">
+    <link rel="shortcut icon" href="./images/site-fish.ico">
     <title>今日热榜 - 摸水看鱼</title>
     <style>
-        [v-cloak]{display:none !important;}
         * {box-sizing: border-box;}
         body, div, p, input { margin: 0; padding: 0; }
+        a { outline: 0 !important; text-decoration: none; }
         /* 自适应字体大小 */
         html { font-size: calc(100vw / 10); }
         /* 最小宽度定义 */
@@ -16,23 +17,93 @@
                 font-size: calc(375Px / 10);
             }
         }
+        html body { min-width: 375Px; margin-right: auto; margin-left: auto; }
         /* 最大宽度定义 */
         @media screen and (min-width: 750Px) {
             html {
                 font-size: calc(750Px / 10);
             }
         }
-        html body { min-width: 375Px; margin-right: auto; margin-left: auto; }
+        /* Theme color variables */
+        html {
+            --body-bg-color: #f9f9f9;
+            --text-def-color: #282a2d;
+            --header-bg-color: #fff;
+            --header-box-shadow: 0px 0px 25px 5px rgba(10, 10, 10, .05);
+            --card-bg-color: #fff;
+            --card-box-shadow: 0px 0px 20px -5px rgba(158, 158, 158, .2);
+            --footer-text-color: #555;
+            --footer-bg-color: rgba(210,210,210, .5);
+            --hot-item-a-visited-color: #f1b0b4;
+            --hot-item-a-hover-color: #f1404b;
+        }
+        html.dark {
+            --body-bg-color: #1b1d1f;
+            --text-def-color: #c6c9cf;
+            --header-bg-color: #2c2e2f;
+            --header-box-shadow: none;
+            --card-bg-color: #2c2e2f;
+            --card-box-shadow: none;
+            --footer-text-color: rgb(204, 204, 204);
+            --footer-bg-color: rgba(10, 10, 10, 0);
+            --hot-item-a-hover-color: #b55c62;
+        }
+        
         /* toast */
-        .toast-overlay { position: fixed; font-size: 14Px; top: 20%; left: 50%; transform: translate(-50%, 0); background-color: rgba(0, 0, 0, 0.8); color: #fff; padding: .133rem .267rem; border-radius: .053rem; z-index: 9999; opacity: 0; transition: opacity 0.3s ease-in-out; display: none; }
+        .toast-overlay { position: fixed; font-size: 14Px; top: 20%; left: 50%; transform: translate(-50%, 0); background-color: rgba(0, 0, 0, 0.8); color: #fff; padding: 9.975px 20.025px; border-radius: 3.975px; z-index: 9999; opacity: 0; transition: opacity 0.3s ease-in-out; display: none; }
         .toast-overlay.show { display: block; opacity: 1; }
     </style>
     <style>
-        body { background: #f9f9f9;}
-        .main-content {
-            max-width: 1140Px;
-            margin: 0 auto;
+        [v-cloak]{display:none !important; }
+        body { background: var(--body-bg-color); font-size: 16Px;}
+        @font-face {
+            font-family: 'fagun Font';
+            font-weight: 400;
+            font-style: normal;
+            font-display: swap;
+            src: url('./styles/fagun.ttf') format('woff2');
         }
+        ::-webkit-scrollbar-thumb { background-color: rgba(130, 130, 130, .5); -webkit-border-radius: .053rem; border-radius: .053rem; }
+        ::-webkit-scrollbar-thumb:hover { background-color: var(--hot-item-a-hover-color); }
+        ::-webkit-scrollbar-corner { background: rgba(0, 0, 0, 0); border-radius: 0 0 .107rem 0; }
+        ::-webkit-scrollbar-button { background-color: rgba(0, 0, 0, 0); height: .027rem; width: .027rem; }
+        ::-webkit-scrollbar { width: .067rem; height: .067rem; }
+        .header-nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            display: flex;
+            width: 100%;
+            height: 56Px;
+            background-color: var(--header-bg-color);
+            box-shadow: var(--header-box-shadow);
+            z-index: 99;
+        }
+        .header-nav .header-wrap {
+            width: 100%;
+            padding: .107rem .213rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            color: var(--text-def-color);
+        }
+        .header-nav .header-wrap .left {
+            display: flex;
+            align-items: center;
+            font-family: 'fagun Font';
+            font-size: 18Px;
+            font-weight: 700;
+        }
+        .header-nav .header-wrap .left .ico-img { width: 20Px; }
+        .header-nav .header-wrap .left:focus {
+            border: none;
+            outline: none;
+        }
+        .header-nav .header-wrap .right {
+            display: flex;
+            align-items: center;
+        }
+        .main-content { max-width: 1140Px; margin: 0 auto; }
         @media (min-width: 576Px) {
             .main-content { max-width: 540Px; }
         }
@@ -45,22 +116,10 @@
         @media (min-width: 1200Px) {
             .main-content { max-width: 1140Px; }
         }
-        .main-content .content {
-            width: 100%;
-            padding: 0 15Px;
-            margin-top: 30Px;
-            margin-bottom: 50Px;
-        }
-        .card-wrap {
-            display: flex;
-            flex-wrap: wrap;
-        }
-        .card-wrap .card-item-wrap {
-            padding-left: 8.025px;
-            padding-right: 8.025px;
-            margin-bottom: 15.975px;
-            width: 100%;
-        }
+        .main-content .content { width: 100%; padding: 0 15Px; margin-bottom: 50Px; }
+        .main-content .mg-top-header {height: 80Px;}
+        .card-wrap { display: flex; flex-wrap: wrap; }
+        .card-wrap .card-item-wrap { padding-left: .107rem; padding-right: .107rem; margin-bottom: .213rem; width: 100%; }
         @media (max-width: 576Px) {
             .card-wrap .card-item-wrap { width: 100%; padding-left: 0; padding-right: 0; }
         }
@@ -70,84 +129,42 @@
         @media (min-width: 992Px) {
             .card-wrap .card-item-wrap { width: 33.33%; }
         }
-        .card-wrap .card-item-wrap .card {
-            background-color: #fff;
-            border-radius: .107rem;
-            color: rgb(40, 42, 45);
-        }
-        .card-wrap .card-item-wrap .card .card-header {
-            padding: .16rem .267rem;
-            font-size: 16Px;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-        }
-        .card-wrap .card-item-wrap .card .card-header .left { display: flex; }
-        .card-wrap .card-item-wrap .card .card-header .right { display: flex; }
-        .card-wrap .card-item-wrap .card .card-header .hot-ico {
-            height: 18Px;
-            margin-right: .053rem;
-        }
-        .card-wrap .card-item-wrap .card .card-header .last-update-time {
-            font-size: 12Px;
-        }
-        .card-wrap .card-item-wrap .card .card-body {
-            padding: 0 .267rem .213rem;
-            font-size: 16Px;
-            display: flex;
-            align-items: center;
-        }
-        .card-wrap .card-item-wrap .card .card-body .hot-body {
-            width: 100%;
-            height: 200Px;
-            display: flex;
-            flex-direction: column;
-            overflow-y: scroll;
-        }
-        .card-wrap .card-item-wrap .card .card-body .hot-body::-webkit-scrollbar-button {
-            background-color: rgba(0, 0, 0, 0);
-            height: .027rem;
-            width: .027rem;
-        }
-        .card-wrap .card-item-wrap .card .card-body .hot-body::-webkit-scrollbar-corner {
-            background: rgba(0, 0, 0, 0);
-            border-radius: 0 0 .107rem 0;
-        }
-        .card-wrap .card-item-wrap .card .card-body .hot-body::-webkit-scrollbar-thumb {
-            background-color: rgba(130, 130, 130, .5);
-            -webkit-border-radius: .053rem;
-            border-radius: .053rem;
-        }
-        .card-wrap .card-item-wrap .card .card-body .hot-body .hot-item {
-            font-size: 14Px;
-            width: 100%;
-            cursor: pointer;
-            margin-bottom: 3Px;
-        }
-        .card-wrap .card-item-wrap .card .card-body .hot-body .hot-item .hot-rank {
-            width: 18Px;
-            border-radius: 4Px;
-            background: rgba(124, 124, 124, .3);
-            display: inline-block;
-            text-align: center;
-            font-size: 12Px;
-        }
-        .card-wrap .card-item-wrap .card .card-body .hot-body .hot-item a {
-            color: #282a2d;
-            outline: 0 !important;
-            text-decoration: none;
-            line-height: .28rem;
-        }
-        .card-wrap .card-item-wrap .card .card-body .hot-body .hot-item a.visited { color: #f1b0b4; }
-        .card-wrap .card-item-wrap .card .card-body .hot-body .hot-item a:hover {
-            color: #f1404b;
-        }
+        .card-wrap .card-item-wrap .card { background-color: var(--card-bg-color); border-radius: 8.025px; color: var(--text-def-color); box-shadow: var(--card-box-shadow); transition: background-color .3s; }
+        .card-wrap .card-item-wrap .card .card-header { padding: 12px 20.025px; font-size: 16Px; display: flex; align-items: center; justify-content: space-between; }
+        .card-wrap .card-item-wrap .card .card-header .left { display: flex;align-items: center; }
+        .card-wrap .card-item-wrap .card .card-header .right { display: flex;align-items: center; }
+        .card-wrap .card-item-wrap .card .card-header .hot-ico { height: 18Px; margin-right: 3.975px; }
+        .card-wrap .card-item-wrap .card .card-header .last-update-time { font-size: 12Px; }
+        .card-wrap .card-item-wrap .card .card-body { padding: 0 20.025px 15.975px; font-size: 16Px; display: flex; align-items: center; }
+        .card-wrap .card-item-wrap .card .card-body .hot-body { width: 100%; height: 200Px; display: flex; flex-direction: column; overflow-y: scroll; }
+        /* .card-wrap .card-item-wrap .card .card-body .hot-body::-webkit-scrollbar-button { background-color: rgba(0, 0, 0, 0); height: 2.025px; width: 2.025px; }
+        .card-wrap .card-item-wrap .card .card-body .hot-body::-webkit-scrollbar-corner { background: rgba(0, 0, 0, 0); border-radius: 0 0 8.025px 0; }
+        .card-wrap .card-item-wrap .card .card-body .hot-body::-webkit-scrollbar-thumb { background-color: rgba(130, 130, 130, .5); -webkit-border-radius: 3.975px; border-radius: 3.975px; } */
+        .card-wrap .card-item-wrap .card .card-body .hot-body .hot-item { font-size: 14Px; width: 100%; cursor: pointer; margin-bottom: 3Px; }
+        .card-wrap .card-item-wrap .card .card-body .hot-body .hot-item .hot-rank { width: 18Px; border-radius: 4Px; background: rgba(124, 124, 124, .3); display: inline-block; text-align: center; font-size: 12Px; } 
+        .card-wrap .card-item-wrap .card .card-body .hot-body .hot-item a { color: var(--text-def-color); line-height: 21px; } 
+        .card-wrap .card-item-wrap .card .card-body .hot-body .hot-item a.visited { color: var(--hot-item-a-visited-color); } 
+        .card-wrap .card-item-wrap .card .card-body .hot-body .hot-item a:hover { color: var(--hot-item-a-hover-color); }
+        
+        .footer-tools { position: fixed; bottom: 20.025px; right: 15px; display: flex; flex-direction: column; z-index: 5; }
+        .footer-tools .btn { color: var(--footer-text-color); background: var(--footer-bg-color); font-size: 20Px; width: 40Px; height: 40Px; text-align: center; line-height: 40Px; padding: unset; display: block; border: unset; transition: .2s; border-radius: 50%; margin: 4Px; cursor: pointer; }
     </style>
+    <link rel="stylesheet" href="styles/iconfont.css?t=100">
 </head>
 <body>
     <div id="app" v-cloak>
         <div class="toast-overlay" id="toastOverlay" :class="{ 'show': toastExtend.show }">{{ toastExtend.content }}</div>
+        <div class="header-nav">
+            <div class="header-wrap">
+                <div class="left" contenteditable="true">
+                    <div>摸水看鱼</div>
+                    <img class="ico-img" style="margin-left: 3Px;" src="./images/site-fish.png">&nbsp;
+                </div>
+                <div class="right"></div>
+            </div>
+        </div>
         <div class="main-content">
+            <div class="mg-top-header"></div>
             <div class="content">
                 <div class="card-wrap">
                     <div class="card-item-wrap" v-for="platformHot, platformIdx in hotData" :key="'platform' + platformIdx">
@@ -163,10 +180,18 @@
                             </div>
                             <div class="card-body">
                                 <div class="hot-body">
-                                    <div class="hot-item" v-for="item, idx in platformHot.data" :key="'hot' + item">
-                                        <span class="hot-rank">{{ item.index }}</span>
-                                        <a :class="{'visited': clickHistory[platformIdx] && clickHistory[platformIdx][idx]}" target="_blank" :href="item.url" @click="clickHotHref(platformIdx, idx)">{{ item.title ? item.title : item.desc }}</a>
-                                    </div>
+                                    <template v-if="platformHot.data && platformHot.data.length > 0">
+                                        <div class="hot-item" v-for="item, idx in platformHot.data" :key="'hot' + item" >
+                                            <span class="hot-rank">{{ item.index }}</span>
+                                            <a :class="{'visited': clickHistory[platformIdx] && clickHistory[platformIdx][idx]}" target="_blank" :href="item.url" @click="clickHotHref(platformIdx, idx)">{{ item.title ? item.title : item.desc }}</a>
+                                        </div>
+                                    </template>
+                                    <template v-else>
+                                        <div class="hot-item">
+                                            <span class="hot-rank">0</span>
+                                            <a>钓鱼中 <span class="iconfont icon-diaoyu"></span> ...</a>
+                                        </div>
+                                    </template>
                                 </div>
                             </div>
                         </div>
@@ -174,89 +199,78 @@
                 </div>
             </div>
         </div>
+
+        <div class="footer-tools">
+            <a class="btn" @click="goToTop">
+                <i class="iconfont icon-huidaodingbu"></i>
+            </a>
+            <a class="btn" v-if="themMode === 'dark'" @click="setTheme('light')">
+                <i class="iconfont icon-rijianmoshi"></i>
+            </a>
+            <a class="btn" v-if="themMode === 'light'" @click="setTheme('dark')">
+                <i class="iconfont icon-yejianmoshi"></i>
+            </a>
+        </div>
     </div>
     <script src="js/vue@2.7.16.min.js"></script>
     <script src="js/axios@1.7.2.min.js"></script>
     <script>
-        function sortArrayByOrder(a, b) {
-            const orderMap = b.reduce((map, key, index) => {
-                map[key] = index;
-                return map;
-            }, {});
-
-            a.sort((item1, item2) => {
-                const index1 = orderMap[item1.key];
-                const index2 = orderMap[item2.key];
-                
-                // Handle cases where key is not found in b
-                if (index1 === undefined && index2 === undefined) {
-                    return 0; // Maintain relative order for keys not found in b
-                } else if (index1 === undefined) {
-                    return 1; // item1.key not found in b, place it after item2
-                } else if (index2 === undefined) {
-                    return -1; // item2.key not found in b, place it after item1
-                } else {
-                    return index1 - index2; // Compare indices in b for sorting
-                }
-            });
-        }
-
-
+        const hotListData = [
+            { "key": "weibo", "title": "微博" },
+            { "key": "douyin", "title": "抖音" },
+            { "key": "zhihu", "title": "知乎热榜" }, 
+            { "key": "bili_all", "title": "哔哩哔哩全站日榜" }, 
+            { "key": "acfun", "title": "ACFun" }, 
+            { "key": "baidu", "title": "百度热点" }, 
+            { "key": "xiaohongshu", "title": "小红书" },
+            { "key": "shenmezhidemai", "title": "什么值得买" },
+            { "key": "douban", "title": "豆瓣" },
+            { "key": "kr36", "title": "36氪" },
+            { "key": "GitHub", "title": "GitHub" },
+            { "key": "v2ex", "title": "V2EX" }, 
+            { "key": "wuaipojie", "title": "吾爱破解" }, 
+            { "key": "history", "title": "历史上的今天" }, 
+            { "key": "youxiputao", "title": "游戏葡萄" }, 
+            { "key": "shaoshupai", "title": "少数派" }, 
+            { "key": "ithome", "title": "IT之家" },
+            { "key": "hupu", "title": "虎扑" }, 
+            { "key": "anquanke", "title": "安全客" }, 
+            { "key": "tieba", "title": "百度贴吧" },
+            { "key": "yichewang", "title": "易车网" }, 
+            { "key": "csdn", "title": "CSDN" },
+            { "key": "dongqiudi", "title": "懂球帝" }, 
+            { "key": "360search", "title": "360搜索" }, 
+            { "key": "jinritoutiao", "title": "今日头条" },
+            { "key": "qqnews", "title": "腾讯新闻" },
+            { "key": "sougou", "title": "搜狗" }
+        ];
+        const hotListDataIndexing = {};
+        hotListData.forEach((item, idx) => { hotListDataIndexing[item.key] = idx; })
+        
+        let mediaQueryThem = null;
         var newVue = new Vue({
             el: '#app',
             data: {
+                themMode: 'light',
                 toastExtend: {
                     show: false,
                     content: '',
                     time: 2000
                 },
-                hotData: [],
-                hotSort: [
-                    "weibo",
-                    "douyin",
-                    "zhihu",
-                    "bili_all",
-                    "acfun",
-                    "baidu",
-                    "wuaipojie",
-                    "GitHub",
-                    "xiaohongshu", // 小红书
-                    "shenmezhidemai", // 什么值得买
-                    "douban", // 豆瓣
-                    "kr36",
-                    "v2ex",
-                    "history",
-                    "youxiputao", // 游戏葡萄
-                    "shaoshupai",
-                    "ithome",   // it之家
-                    "wxRead",   // 微信读书
-                    "dsb",  // 电商报
-                    "hupu",
-                    "anquanke",
-                    // other
-                    "tieba",
-                    "yichewang",
-                    "csdn",
-                    "dongqiudi",
-                    // other
-                    "360search",
-                    "jinritoutiao",
-                    "qqnews",
-                    "sougou"
-                ],
+                hotData: hotListData,
                 hotDataIco: {
                     "weibo": "weibo.png",
                     "douyin": "douyin.png",
                     "zhihu": "zhihu.png",
                     "bili_all": "bilibili.png",
-                    "acfun": "",
+                    "acfun": "acfun.png",
                     "baidu": "baidu.png",
                     "wuaipojie": "wuaipojie.png",
-                    "GitHub": "",
-                    "xiaohongshu": "xiaohongshu.ico",
+                    "xiaohongshu": "xiaohongshu.png",
                     "shenmezhidemai": "smzdm.png",
                     "douban": "douban.png",
                     "kr36": "36kr.png",
+                    "GitHub": "github.png",
                     "v2ex": "",
                     "history": "lssdjt.png",
                     "youxiputao": "youxiputao.ico",
@@ -265,7 +279,7 @@
                     "wxRead": "weread.png",
                     "dsb": "dsb.png",
                     "hupu": "hupu.png",
-                    "anquanke": "",
+                    "anquanke": "anquanke.png",
                     "tieba": "baidu.png",
                     "yichewang": "",
                     "csdn": "",
@@ -290,10 +304,29 @@
                 }
             },
             created() {
+                mediaQueryThem = window.matchMedia("(prefers-color-scheme: light)");
+                this.setTheme();
+                mediaQueryThem.addEventListener("change", this.setTheme);
+                
                 this.getList()
             },
             mounted() {},
+            beforeDestroy() {
+                mediaQueryThemNaNpxoveListener("change", this.setTheme);
+            },
             methods: {
+                setTheme(themModeVal = null) {
+                    document.documentElement.classList['remove'](this.themMode);
+                    let setThemeVal = 'light';
+                    if (themModeVal === 'light' || themModeVal === 'dark') {
+                        setThemeVal = themModeVal;   
+                    } else {
+                        console.log('mediaQueryThem',mediaQueryThem.matches, themModeVal);
+                        setThemeVal = mediaQueryThem.matches ? "light" : "dark";
+                    }
+                    document.documentElement.classList.add(setThemeVal);
+                    this.themMode = setThemeVal;
+                },
                 openToast(text, time = 2000) {
                     if (text) {
                         this.toastExtend.content = text;
@@ -313,8 +346,15 @@
                             this.openToast(resData.msg || '数据获取失败');
                             return;
                         }
-                        sortArrayByOrder(resData.data, this.hotSort);
-                        this.hotData = resData.data;
+                        
+                        resData.data && resData.data.forEach(item => {
+                            if (parseInt(hotListDataIndexing[item.key]) >= 0) {
+                                this.$set(this.hotData, parseInt(hotListDataIndexing[item.key]), item);
+                            } else {
+                                this.hotData.push(item);
+                            }
+                        });
+                        
                     }).catch((err) => {
                         console.log(err);
                         this.openToast('服务状态不可用');
@@ -345,6 +385,9 @@
                     if (!this.clickHistory[levelIdx1][levelIdx2]) {
                         this.$set(this.clickHistory[levelIdx1], levelIdx2, true);
                     }
+                },
+                goToTop() {
+                    document.documentElement.scrollTop = 0
                 }
             },
         });

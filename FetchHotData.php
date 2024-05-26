@@ -150,20 +150,22 @@ class FetchHotData {
         $noHotData = false;
         $hotData = json_decode($content, true);
         if (json_last_error() !== JSON_ERROR_NONE) {
-            echo '解析 传进来的 $content 错误: ' . $content . PHP_EOL;
+            echo '准备写入: 解析 $content 错误: ' . $content . PHP_EOL;
             $noHotData = true;
         }elseif (!$hotData || !isset($hotData['data']) || !$hotData['data']) {
-            echo '传进来的 $content 中 data 没数据: ' . $content . PHP_EOL;
+            echo '准备写入: $content 中 data 没数据: ' . $content . PHP_EOL;
             $noHotData = true;
         }
         if ($noHotData === true) {
-            $lastJsonContent = file_get_contents($fullFilePath);
-            if ($lastJsonContent) {
-                $lastHotData = json_decode($lastJsonContent, true);
-                if (json_last_error() === JSON_ERROR_NONE) {
-                    if ($lastHotData && isset($lastHotData['data']) && $lastHotData['data']) {
-                        echo '传进来的 $content 异常, 但上次数据正常, 本次不覆盖更新;' . PHP_EOL;
-                        return;
+            if (file_exists($fullFilePath)) {
+                $lastJsonContent = file_get_contents($fullFilePath);
+                if ($lastJsonContent) {
+                    $lastHotData = json_decode($lastJsonContent, true);
+                    if (json_last_error() === JSON_ERROR_NONE) {
+                        if ($lastHotData && isset($lastHotData['data']) && $lastHotData['data']) {
+                            echo '准备写入: $content 异常, 但上次数据正常, 本次不覆盖更新;' . PHP_EOL;
+                            return;
+                        }
                     }
                 }
             }

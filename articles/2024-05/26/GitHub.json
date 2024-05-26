@@ -1,0 +1,152 @@
+{
+    "success": true,
+    "title": "GitHub",
+    "subtitle": "热榜",
+    "update_time": "2024-05-26 19:15:37",
+    "data": [
+        {
+            "index": 1,
+            "title": "THU-MIG/yolov10",
+            "url": "https://github.com/THU-MIG/yolov10",
+            "desc": "YOLOv10: Real-Time End-to-End Object Detection"
+        },
+        {
+            "index": 2,
+            "title": "khoj-ai/khoj",
+            "url": "https://github.com/khoj-ai/khoj",
+            "desc": "Your AI second brain. Get answers to your questions, whether they be online or in your own notes. Use foundation models or private, local LLMs. Self-host locally or use our cloud instance. Access from Obsidian, Emacs, Desktop app, Web or Whatsapp."
+        },
+        {
+            "index": 3,
+            "title": "dream-num/univer",
+            "url": "https://github.com/dream-num/univer",
+            "desc": "Univer is an open-source alternative to Google Sheets, Slides, and Docs"
+        },
+        {
+            "index": 4,
+            "title": "AUTOMATIC1111/stable-diffusion-webui",
+            "url": "https://github.com/AUTOMATIC1111/stable-diffusion-webui",
+            "desc": "Stable Diffusion web UI"
+        },
+        {
+            "index": 5,
+            "title": "QuilibriumNetwork/ceremonyclient",
+            "url": "https://github.com/QuilibriumNetwork/ceremonyclient",
+            "desc": "Mirror of Quilibrium git repo: ceremonyclient"
+        },
+        {
+            "index": 6,
+            "title": "EbookFoundation/free-programming-books",
+            "url": "https://github.com/EbookFoundation/free-programming-books",
+            "desc": "📚 Freely available programming books"
+        },
+        {
+            "index": 7,
+            "title": "CADmium-Co/CADmium",
+            "url": "https://github.com/CADmium-Co/CADmium",
+            "desc": "A CAD program that runs in the browser"
+        },
+        {
+            "index": 8,
+            "title": "Dataherald/dataherald",
+            "url": "https://github.com/Dataherald/dataherald",
+            "desc": "Interact with your SQL database, Natural Language to SQL using LLMs"
+        },
+        {
+            "index": 9,
+            "title": "ragapp/ragapp",
+            "url": "https://github.com/ragapp/ragapp",
+            "desc": "The easiest way to use Agentic RAG in any enterprise"
+        },
+        {
+            "index": 10,
+            "title": "lavague-ai/LaVague",
+            "url": "https://github.com/lavague-ai/LaVague",
+            "desc": "Large Action Model framework to develop AI Web Agents"
+        },
+        {
+            "index": 11,
+            "title": "ItzCrazyKns/Perplexica",
+            "url": "https://github.com/ItzCrazyKns/Perplexica",
+            "desc": "Perplexica is an AI-powered search engine. It is an Open source alternative to Perplexity AI"
+        },
+        {
+            "index": 12,
+            "title": "jordan-cutler/path-to-senior-engineer-handbook",
+            "url": "https://github.com/jordan-cutler/path-to-senior-engineer-handbook",
+            "desc": "All the resources you need to get to Senior Engineer and beyond"
+        },
+        {
+            "index": 13,
+            "title": "ashishps1/awesome-low-level-design",
+            "url": "https://github.com/ashishps1/awesome-low-level-design",
+            "desc": "Learn Low Level Design (LLD) and prepare for interviews using free resources."
+        },
+        {
+            "index": 14,
+            "title": "HITsz-TMG/UMOE-Scaling-Unified-Multimodal-LLMs",
+            "url": "https://github.com/HITsz-TMG/UMOE-Scaling-Unified-Multimodal-LLMs",
+            "desc": "The codes about \"Uni-MoE: Scaling Unified Multimodal Models with Mixture of Experts\""
+        },
+        {
+            "index": 15,
+            "title": "codecrafters-io/build-your-own-x",
+            "url": "https://github.com/codecrafters-io/build-your-own-x",
+            "desc": "Master programming by recreating your favorite technologies from scratch."
+        },
+        {
+            "index": 16,
+            "title": "vulhub/vulhub",
+            "url": "https://github.com/vulhub/vulhub",
+            "desc": "Pre-Built Vulnerable Environments Based on Docker-Compose"
+        },
+        {
+            "index": 17,
+            "title": "dataelement/bisheng",
+            "url": "https://github.com/dataelement/bisheng",
+            "desc": "Bisheng is an open LLM devops platform for next generation AI applications."
+        },
+        {
+            "index": 18,
+            "title": "searxng/searxng",
+            "url": "https://github.com/searxng/searxng",
+            "desc": "SearXNG is a free internet metasearch engine which aggregates results from various search services and databases. Users are neither tracked nor profiled."
+        },
+        {
+            "index": 19,
+            "title": "Avaiga/taipy",
+            "url": "https://github.com/Avaiga/taipy",
+            "desc": "Turns Data and AI algorithms into production-ready web applications in no time."
+        },
+        {
+            "index": 20,
+            "title": "es3n1n/no-defender",
+            "url": "https://github.com/es3n1n/no-defender",
+            "desc": "A slightly more fun way to disable windows defender. (through the WSC api)"
+        },
+        {
+            "index": 21,
+            "title": "ente-io/ente",
+            "url": "https://github.com/ente-io/ente",
+            "desc": "Fully open source, End to End Encrypted alternative to Google Photos and Apple Photos"
+        },
+        {
+            "index": 22,
+            "title": "maitrix-org/Pandora",
+            "url": "https://github.com/maitrix-org/Pandora",
+            "desc": "Pandora: Towards General World Model with Natural Language Actions and Video States"
+        },
+        {
+            "index": 23,
+            "title": "termux/termux-packages",
+            "url": "https://github.com/termux/termux-packages",
+            "desc": "A package build system for Termux."
+        },
+        {
+            "index": 24,
+            "title": "continuedev/continue",
+            "url": "https://github.com/continuedev/continue",
+            "desc": "⏩ Open-source VS Code and JetBrains extensions that enable you to easily create your own modular AI software development system"
+        }
+    ]
+}
