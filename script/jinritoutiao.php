@@ -32,13 +32,15 @@ function toutiao() {
     $jsonRes = json_decode(curl_toutiao('https://www.toutiao.com/hot-event/hot-board/?origin=toutiao_pc', null, null), true);
 
     $tempArr = [];
-    foreach ($jsonRes['data'] as $k => $v) {
-        // 因为index=1时，不是热搜的标题，是介绍语，所以从第二个开始索引。
-        array_push($tempArr, [
-                'index' => $k+1,
-                'title' => $v['Title'],
-                'url' => $v['Url'],
-            ]);
+    if ($jsonRes && isset($jsonRes['data'])) {
+        foreach ($jsonRes['data'] as $k => $v) {
+            // 因为index=1时，不是热搜的标题，是介绍语，所以从第二个开始索引。
+            array_push($tempArr, [
+                    'index' => $k+1,
+                    'title' => $v['Title'],
+                    'url' => $v['Url'],
+                ]);
+        }
     }
 
     return [
