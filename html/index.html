@@ -8,7 +8,7 @@
     <style>
         * {box-sizing: border-box;}
         body, div, p, input { margin: 0; padding: 0; }
-        a { outline: 0 !important; text-decoration: none; }
+        a { color: inherit; outline: 0 !important; text-decoration: none; }
         /* 自适应字体大小 */
         html { font-size: calc(100vw / 10); }
         /* 最小宽度定义 */
@@ -52,6 +52,25 @@
         /* toast */
         .toast-overlay { position: fixed; font-size: 14Px; top: 20%; left: 50%; transform: translate(-50%, 0); background-color: rgba(0, 0, 0, 0.8); color: #fff; padding: 9.975px 20.025px; border-radius: 3.975px; z-index: 9999; opacity: 0; transition: opacity 0.3s ease-in-out; display: none; }
         .toast-overlay.show { display: block; opacity: 1; }
+        /* tooltip-wrap */
+        .tooltip-wrap { position: relative; }
+        .tooltip-wrap .tooltip-content {
+            position: absolute;
+            border-radius: .053rem;
+            padding: .133rem;
+            z-index: 2000;
+            font-size: 12Px;
+            line-height: 1.2;
+            min-width: .133rem;
+            word-wrap: break-word;
+            background: #303133;
+            color: #fff;
+            z-index: 2034;
+            white-space: nowrap;
+            right: -0.2rem;
+            display: none;
+        }
+        .tooltip-wrap .tooltip-content.show {display: block;}
     </style>
     <style>
         [v-cloak]{display:none !important; }
@@ -68,41 +87,15 @@
         ::-webkit-scrollbar-corner { background: rgba(0, 0, 0, 0); border-radius: 0 0 .107rem 0; }
         ::-webkit-scrollbar-button { background-color: rgba(0, 0, 0, 0); height: .027rem; width: .027rem; }
         ::-webkit-scrollbar { width: .067rem; height: .067rem; }
-        .header-nav {
-            position: fixed;
-            top: 0;
-            left: 0;
-            display: flex;
-            width: 100%;
-            height: 56Px;
-            background-color: var(--header-bg-color);
-            box-shadow: var(--header-box-shadow);
-            z-index: 99;
-        }
-        .header-nav .header-wrap {
-            width: 100%;
-            padding: .107rem .213rem;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            color: var(--text-def-color);
-        }
-        .header-nav .header-wrap .left {
-            display: flex;
-            align-items: center;
-            font-family: 'fagun Font';
-            font-size: 18Px;
-            font-weight: 700;
-        }
+        
+        .header-nav { position: fixed; top: 0; left: 0; display: flex; width: 100%; height: 56Px; background-color: var(--header-bg-color); box-shadow: var(--header-box-shadow); z-index: 99; }
+        .header-nav .header-wrap { width: 100%; padding: .107rem .213rem; display: flex; align-items: center; justify-content: space-between; color: var(--text-def-color); }
+        .header-nav .header-wrap .left { display: flex; align-items: center; font-family: 'fagun Font'; font-size: 18Px; font-weight: 700; }
         .header-nav .header-wrap .left .ico-img { width: 20Px; }
-        .header-nav .header-wrap .left:focus {
-            border: none;
-            outline: none;
-        }
-        .header-nav .header-wrap .right {
-            display: flex;
-            align-items: center;
-        }
+        .header-nav .header-wrap .left:focus { border: none; outline: none; }
+        .header-nav .header-wrap .right { display: flex; align-items: center; font-size: 18Px; }
+        .header-nav .header-wrap .right .bar-menu-link { margin-right: .133rem; cursor: pointer; }
+        .header-nav .header-wrap .right .bar-menu-link:last-child { margin-right: 0; }
         .main-content { max-width: 1140Px; margin: 0 auto; }
         @media (min-width: 576Px) {
             .main-content { max-width: 540Px; }
@@ -160,7 +153,17 @@
                     <div>摸水看鱼</div>
                     <img class="ico-img" style="margin-left: 3Px;" src="./images/site-fish.png">&nbsp;
                 </div>
-                <div class="right"></div>
+                <div class="right">
+                    <div class="bar-menu-link tooltip-wrap" @mouseenter="tooltipShow = true" @mouseleave="tooltipShow = false">
+                        <i class="iconfont icon-info-fill"></i>
+                        <div class="tooltip-content" :class="{ 'show': tooltipShow }">本站每30分钟抓取一次热搜数据</div>
+                    </div>
+                    <div class="bar-menu-link">
+                        <a href="https://github.com/skadoosh-Q/hot-trending.git" target="_blank">
+                            <i class="iconfont icon-github"></i>
+                        </a>
+                    </div>
+                </div>
             </div>
         </div>
         <div class="main-content">
@@ -224,25 +227,19 @@
             { "key": "acfun", "title": "ACFun" }, 
             { "key": "xiaohongshu", "title": "小红书" },
             { "key": "shenmezhidemai", "title": "什么值得买" },
+            { "key": "tieba", "title": "百度贴吧" },
             { "key": "douban", "title": "豆瓣" },
+            { "key": "history", "title": "历史上的今天" },
             { "key": "kr36", "title": "36氪" },
             { "key": "GitHub", "title": "GitHub" },
             { "key": "v2ex", "title": "V2EX" }, 
-            { "key": "wuaipojie", "title": "吾爱破解" }, 
-            { "key": "history", "title": "历史上的今天" }, 
+            { "key": "wuaipojie", "title": "吾爱破解" },
             { "key": "youxiputao", "title": "游戏葡萄" }, 
             { "key": "shaoshupai", "title": "少数派" }, 
             { "key": "ithome", "title": "IT之家" },
             { "key": "hupu", "title": "虎扑" }, 
-            { "key": "anquanke", "title": "安全客" }, 
-            { "key": "tieba", "title": "百度贴吧" },
-            { "key": "yichewang", "title": "易车网" }, 
+            { "key": "anquanke", "title": "安全客" },
             { "key": "csdn", "title": "CSDN" },
-            { "key": "dongqiudi", "title": "懂球帝" }, 
-            { "key": "360search", "title": "360搜索" }, 
-            { "key": "jinritoutiao", "title": "今日头条" },
-            { "key": "qqnews", "title": "腾讯新闻" },
-            { "key": "sougou", "title": "搜狗" }
         ];
         const hotListDataIndexing = {};
         hotListData.forEach((item, idx) => { hotListDataIndexing[item.key] = idx; })
@@ -257,6 +254,7 @@
                     content: '',
                     time: 2000
                 },
+                tooltipShow: false,
                 hotData: hotListData,
                 hotDataIco: {
                     "weibo": "weibo.png",

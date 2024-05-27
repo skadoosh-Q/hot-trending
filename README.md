@@ -35,7 +35,10 @@ php ./FetchHotData.php test
 php ./FetchHotData.php test checkEmpty
 ```
 
-前端部署 nginx
+前端页面
+![](home-ex.jpg)
+
+部署 nginx
 ```Nginx
 server {
     listen 80;
