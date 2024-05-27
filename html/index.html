@@ -54,25 +54,6 @@
         /* toast */
         .toast-overlay { position: fixed; font-size: 14Px; top: 20%; left: 50%; transform: translate(-50%, 0); background-color: rgba(0, 0, 0, 0.8); color: #fff; padding: 9.975px 20.025px; border-radius: 3.975px; z-index: 9999; opacity: 0; transition: opacity 0.3s ease-in-out; display: none; }
         .toast-overlay.show { display: block; opacity: 1; }
-        /* tooltip-wrap */
-        .tooltip-wrap { position: relative; }
-        .tooltip-wrap .tooltip-content {
-            position: absolute;
-            border-radius: .053rem;
-            padding: .133rem;
-            z-index: 2000;
-            font-size: 12Px;
-            line-height: 1.2;
-            min-width: .133rem;
-            word-wrap: break-word;
-            background: #303133;
-            color: #fff;
-            z-index: 2034;
-            white-space: nowrap;
-            right: -0.2rem;
-            display: none;
-        }
-        .tooltip-wrap .tooltip-content.show {display: block;}
     </style>
     <style>
         [v-cloak]{display:none !important; }
@@ -92,11 +73,11 @@
         
         .header-nav { position: fixed; top: 0; left: 0; display: flex; width: 100%; height: 56Px; background-color: var(--header-bg-color); box-shadow: var(--header-box-shadow); z-index: 99; }
         .header-nav .header-wrap { width: 100%; padding: .107rem .213rem; display: flex; align-items: center; justify-content: space-between; color: var(--text-def-color); }
-        .header-nav .header-wrap .left { display: flex; align-items: center; font-family: 'fagun Font'; font-size: 18Px; font-weight: 700; }
+        .header-nav .header-wrap .left { display: flex; align-items: center; font-family: 'fagun Font'; font-size: 18Px; font-weight: 700; min-width: 30Px;min-height: 100%; }
         .header-nav .header-wrap .left .ico-img { width: 20Px; }
         .header-nav .header-wrap .left:focus { border: none; outline: none; }
         .header-nav .header-wrap .right { display: flex; align-items: center; font-size: 18Px; }
-        .header-nav .header-wrap .right .bar-menu-link { margin-right: .133rem; cursor: pointer; }
+        .header-nav .header-wrap .right .bar-menu-link { margin-right: .2rem; cursor: pointer; }
         .header-nav .header-wrap .right .bar-menu-link:last-child { margin-right: 0; }
         .main-content { max-width: 1140Px; margin: 0 auto; }
         @media (min-width: 576Px) {
@@ -154,14 +135,13 @@
         <div class="toast-overlay" id="toastOverlay" :class="{ 'show': toastExtend.show }">{{ toastExtend.content }}</div>
         <div class="header-nav">
             <div class="header-wrap">
-                <div class="left" contenteditable="true">
-                    <div>摸水看鱼</div>
+                <div class="left" contenteditable="true" @input="handleInputHeader">
+                    摸水看鱼
                     <img class="ico-img" style="margin-left: 3Px;" src="./images/site-fish.png">&nbsp;
                 </div>
                 <div class="right">
-                    <div class="bar-menu-link tooltip-wrap" @mouseenter="tooltipShow = true" @mouseleave="tooltipShow = false">
+                    <div class="bar-menu-link" @click="showSiteTip">
                         <i class="iconfont icon-info-fill"></i>
-                        <div class="tooltip-content" :class="{ 'show': tooltipShow }">本站每30分钟抓取一次热搜数据</div>
                     </div>
                     <div class="bar-menu-link">
                         <a href="https://github.com/skadoosh-Q/hot-trending.git" target="_blank">
@@ -261,7 +241,8 @@
                 toastExtend: {
                     show: false,
                     content: '',
-                    time: 2000
+                    time: 2000,
+                    countShow: 0
                 },
                 tooltipShow: false,
                 hotData: hotListData,
@@ -333,16 +314,32 @@
                     document.documentElement.classList.add(setThemeVal);
                     this.themMode = setThemeVal;
                 },
+                showSiteTip() {
+                    this.openToast('本站每30分钟抓取一次热搜数据', 3000);
+                },
                 openToast(text, time = 2000) {
                     if (text) {
                         this.toastExtend.content = text;
                     }
                     this.toastExtend.show = true;
+                    this.toastExtend.countShow += 1;
+                    const nowShowNum =  this.toastExtend.countShow;
 
                     setTimeout(() => {
-                        this.toastExtend.show = false;
-                        this.toastExtend.content = '';
+                        if (this.toastExtend.countShow === nowShowNum) {
+                            this.toastExtend.show = false;
+                            this.toastExtend.content = '';
+                        }
                     }, time);
+                },
+                handleInputHeader(event) {
+                    const inputElement = event.target;
+                    const text = inputElement.textContent;
+                    if (!text || text.trim() === '') {
+                        document.title = '\u200b';
+                        return;
+                    }
+                    document.title = text;
                 },
                 getList() {
                     axios.get(document.location.href + 'api/getHotData.php')
