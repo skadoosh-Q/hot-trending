@@ -3,9 +3,12 @@ date_default_timezone_set('Asia/Shanghai');
 header('Content-Type: application/json; charset=utf-8');
 function sougou(){
 	$urls = "https://www.sogou.com/web?query=%E6%90%9C%E7%8B%97%E7%83%AD%E6%90%9C";
+	$ip = rand(0, 255) . '.' . rand(0, 255) . '.' . rand(0, 255) . '.' . rand(0, 255);
 	$context = stream_context_create([
 	    "http" => [
-	        "header" => "User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36",
+	        "header" => "User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36" .
+					"CLIENT-IP:" . $ip .
+					"X-FORWARDED-FOR:" . $ip,
 	    ],
 	]);
 	
