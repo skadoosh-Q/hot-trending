@@ -111,7 +111,7 @@
         @media (min-width: 1200Px) {
             .main-content { max-width: 1140Px; }
         }
-        .main-content .content { width: 100%; padding: 0 15Px; margin-bottom: 50Px; }
+        .main-content .content { width: 100%; padding: 0 15Px; margin-bottom: 15Px; }
         .main-content .mg-top-header {height: 80Px;}
         .card-wrap { display: flex; flex-wrap: wrap; }
         .card-wrap .card-item-wrap { padding-left: .107rem; padding-right: .107rem; margin-bottom: .213rem; width: 100%; }
@@ -140,7 +140,10 @@
         .card-wrap .card-item-wrap .card .card-body .hot-body .hot-item a { color: var(--text-def-color); } 
         .card-wrap .card-item-wrap .card .card-body .hot-body .hot-item a.visited { color: var(--hot-item-a-visited-color); } 
         .card-wrap .card-item-wrap .card .card-body .hot-body .hot-item a:hover { color: var(--hot-item-a-hover-color); }
-        
+
+        .main-footer { position: relative; width: 100%; padding: .32rem; padding-top: .2rem; line-height: .32rem; color: var(--text-def-color); }
+        .main-footer .footer-copyright { width: 100%; font-size: 12Px; text-align: center; }
+        .main-footer .footer-copyright a { color: #1690D0; }
         .footer-tools { position: fixed; bottom: 20.025px; right: 15px; display: flex; flex-direction: column; z-index: 5; }
         .footer-tools .btn { color: var(--footer-text-color); background: var(--footer-bg-color); font-size: 20Px; width: 40Px; height: 40Px; text-align: center; line-height: 40Px; padding: unset; display: block; border: unset; transition: .2s; border-radius: 50%; margin: 4Px; cursor: pointer; }
     </style>
@@ -203,6 +206,10 @@
                     </div>
                 </div>
             </div>
+        </div>
+
+        <div class="main-footer">
+            <div class="footer-copyright"> Copyright © 2024 <a target="_blank" href="https://deq.plus">DeQ</a></div>
         </div>
 
         <div class="footer-tools">
