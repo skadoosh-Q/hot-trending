@@ -43,33 +43,46 @@ php ./FetchHotData.php test checkEmpty
 server {
     listen 80;
 
-    index index.html index.htm;
+    root  /hot-trending/html;
+    index index.php index.html index.htm;
     server_name hot-trending.local;
     charset utf-8;
 
-    location / {
-      root  /hot-trending/html;
-      try_files $uri $uri/ /index.html;
-    }
-
     location /api {
       alias /hot-trending/api;
-      try_files $uri $uri/ =404;
 
-      # 配置php处理程序
       location ~ \.php$ {
         include fastcgi_params;
         fastcgi_pass   127.0.0.1:9000;
         fastcgi_read_timeout 3000;
         fastcgi_param SCRIPT_FILENAME $request_filename;
+        fastcgi_param APP_ENV production; # 配置环境变量,生产环境
         fastcgi_index index.php;
         fastcgi_buffers 768 3072k;
         fastcgi_buffer_size 3m;
       }
     }
-}
+    
+    # location ~* ^/(?!api/).+\.php$ {
+    location ~ \.php$ {
+      include fastcgi_params;
 
+      fastcgi_pass   127.0.0.1:9000;
+      fastcgi_read_timeout 3000;
+      fastcgi_param SCRIPT_FILENAME $document_root$fastcgi_script_name;
+      fastcgi_param APP_ENV production; # 配置环境变量,生产环境
+      fastcgi_index index.php;
+      fastcgi_buffers 768 3072k;
+      fastcgi_buffer_size 3m;
+    }
+}
 ```
+
+> 部署生产环境时，在`html/`目录下创建`.env.production`文件。    
+> 并在`nginx`设置`fastcgi_param APP_ENV production;`    
+> 若在开发环境下，不配置`fastcgi_param APP_ENV production;` 即可。
+
+在env文件里，可配置
 
 ### 目前平台：
 
