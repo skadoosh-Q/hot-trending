@@ -34,7 +34,7 @@ function getAppEnv($key, $default = null) {
 ?>
 <!DOCTYPE html>
 <html lang="en">
-
+<?php echo getAppEnv('WEBSITE_STATISTICS_CODE'); ?>
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1,maximum-scale=1,minimum-scale=1,viewport-fit=cover">
