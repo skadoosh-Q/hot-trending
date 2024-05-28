@@ -13,8 +13,8 @@ function ithome()
 
 	$results = [];
 	foreach ($matches as $index => $match) {
-		$title = trim($match[1]);
-		$url = $match[2];
+		$title = $match[2];
+		$url = trim($match[1]);
 
 		// 将标题和链接添加到结果数组
 		$results[] = [
