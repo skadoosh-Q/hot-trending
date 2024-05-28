@@ -355,9 +355,6 @@ function getAppEnv($key, $default = null) {
       overflow-y: scroll;
     }
 
-    /* .card-wrap .card-item-wrap .card .card-body .hot-body::-webkit-scrollbar-button { background-color: rgba(0, 0, 0, 0); height: 2.025px; width: 2.025px; }
-        .card-wrap .card-item-wrap .card .card-body .hot-body::-webkit-scrollbar-corner { background: rgba(0, 0, 0, 0); border-radius: 0 0 8.025px 0; }
-        .card-wrap .card-item-wrap .card .card-body .hot-body::-webkit-scrollbar-thumb { background-color: rgba(130, 130, 130, .5); -webkit-border-radius: 3.975px; border-radius: 3.975px; } */
     .card-wrap .card-item-wrap .card .card-body .hot-body .hot-item {
       font-size: 15Px;
       width: 100%;
