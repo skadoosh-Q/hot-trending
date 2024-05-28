@@ -52,7 +52,7 @@
         }
         
         /* toast */
-        .toast-overlay { position: fixed; font-size: 14Px; top: 20%; left: 50%; transform: translate(-50%, 0); background-color: rgba(0, 0, 0, 0.8); color: #fff; padding: 9.975px 20.025px; border-radius: 3.975px; z-index: 9999; opacity: 0; transition: opacity 0.3s ease-in-out; display: none; }
+        .toast-overlay { position: fixed; font-size: 14Px; top: 20%; left: 50%; transform: translate(-50%, 0); background-color: rgba(0, 0, 0, 0.8); color: #fff; padding: 9.975px 20.025px; border-radius: 3.975px; text-align: center; z-index: 9999; opacity: 0; transition: opacity 0.3s ease-in-out; display: none; }
         .toast-overlay.show { display: block; opacity: 1; }
     </style>
     <style>
@@ -77,8 +77,8 @@
         .header-nav .header-wrap .left .ico-img { width: 20Px; }
         .header-nav .header-wrap .left:focus { border: none; outline: none; }
         .header-nav .header-wrap .right { display: flex; align-items: center; font-size: 18Px; }
-        .header-nav .header-wrap .right .bar-menu-link { margin-right: .2rem; cursor: pointer; }
-        .header-nav .header-wrap .right .bar-menu-link:last-child { margin-right: 0; }
+        .header-nav .header-wrap .right .bar-menu-link { margin-left: .2rem; cursor: pointer; }
+        .header-nav .header-wrap .right .bar-menu-link:first-child { margin-right: 0; }
         .main-content { max-width: 1140Px; margin: 0 auto; }
         @media (min-width: 576Px) {
             .main-content { max-width: 540Px; }
@@ -116,7 +116,7 @@
         /* .card-wrap .card-item-wrap .card .card-body .hot-body::-webkit-scrollbar-button { background-color: rgba(0, 0, 0, 0); height: 2.025px; width: 2.025px; }
         .card-wrap .card-item-wrap .card .card-body .hot-body::-webkit-scrollbar-corner { background: rgba(0, 0, 0, 0); border-radius: 0 0 8.025px 0; }
         .card-wrap .card-item-wrap .card .card-body .hot-body::-webkit-scrollbar-thumb { background-color: rgba(130, 130, 130, .5); -webkit-border-radius: 3.975px; border-radius: 3.975px; } */
-        .card-wrap .card-item-wrap .card .card-body .hot-body .hot-item { font-size: 15Px; width: 100%; cursor: pointer; margin-bottom: .107rem; line-height: 21Px; }
+        .card-wrap .card-item-wrap .card .card-body .hot-body .hot-item { font-size: 15Px; width: 100%; cursor: pointer; margin-bottom: 8Px; line-height: 21Px; }
         .card-wrap .card-item-wrap .card .card-body .hot-body .hot-item .hot-rank { width: 18Px; border-radius: 4Px; background: rgba(124, 124, 124, .3); display: inline-block; text-align: center; font-size: 12Px; } 
         .card-wrap .card-item-wrap .card .card-body .hot-body .hot-item a { color: var(--text-def-color); } 
         .card-wrap .card-item-wrap .card .card-body .hot-body .hot-item a.visited { color: var(--hot-item-a-visited-color); } 
@@ -143,7 +143,9 @@
                     <div class="bar-menu-link" @click="showSiteTip">
                         <i class="iconfont icon-info-fill"></i>
                     </div>
-                    <div class="bar-menu-link">
+                    <!-- 爬虫项目不推广, 特此隐藏 -->
+                    <!-- Do not proactively promote crawler projects. -->
+                    <div class="bar-menu-link" style="display: none;">
                         <a href="https://github.com/skadoosh-Q/hot-trending.git" target="_blank">
                             <i class="iconfont icon-github"></i>
                         </a>
