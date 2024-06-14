@@ -36,9 +36,9 @@ php ./FetchHotData.php test checkEmpty
 ```
 
 前端页面    
-[在线预览](https:hot.deq.plus)     
+[在线预览](https://hot.deq.plus)     
 
-![](home-ex.jpg)    
+![](./home-ex.jpg)    
 
 部署 nginx
 ```Nginx
