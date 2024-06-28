@@ -52,7 +52,7 @@ function startfun()
       $descriptionLink = '';
       $descriptionContent = '';
 
-      $linkNode = $xpath->query('//p[contains(@class, "title-wrapper")]/a[contains(@class, "article-item-title")]', $wrapper)[0];
+      $linkNode = $xpath->query('.//p[contains(@class, "title-wrapper")]/a[contains(@class, "article-item-title")]', $wrapper)[0];
       if ($linkNode) {
         $descriptionLink = $linkNode->getAttribute('href');
         $descriptionContent = $linkNode->nodeValue; // 或者 $linkNode->textContent;
@@ -62,6 +62,7 @@ function startfun()
         'link' => $descriptionLink,
         'title' => $descriptionContent,
       ];
+      unset($wrapper);
     }
   }
 
