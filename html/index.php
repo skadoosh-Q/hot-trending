@@ -433,9 +433,9 @@ function getAppEnv($key, $default = null) {
 </head>
 
 <body>
+  <!-- 如果你有幸看到这行字。本项目已开源。爬虫项目不推广, 特此隐藏 -->
+  <!-- github: https://github.com/skadoosh-Q/hot-trending -->
   <div id="app" v-cloak>
-    <!-- 如果你有幸看到这行字。本项目已开源。爬虫项目不推广, 特此隐藏 -->
-    <!-- github: https://github.com/skadoosh-Q/hot-trending -->
     <div class="toast-overlay" id="toastOverlay" :class="{ 'show': toastExtend.show }">{{ toastExtend.content }}</div>
     <div class="header-nav">
       <div class="header-wrap">
