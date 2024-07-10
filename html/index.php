@@ -536,10 +536,10 @@ function getAppEnv($key, $default = null) {
         "key": "acfun",
         "title": "ACFun"
       },
-      {
-        "key": "xiaohongshu",
-        "title": "小红书"
-      },
+      // {
+      //   "key": "xiaohongshu",
+      //   "title": "小红书"
+      // },
       {
         "key": "shenmezhidemai",
         "title": "什么值得买"
@@ -549,8 +549,8 @@ function getAppEnv($key, $default = null) {
         "title": "百度贴吧"
       },
       {
-        "key": "douban",
-        "title": "豆瓣"
+        "key": "douban_group",
+        "title": "豆瓣小组"
       },
       {
         "key": "history",
@@ -626,6 +626,7 @@ function getAppEnv($key, $default = null) {
           "xiaohongshu": "xiaohongshu.png",
           "shenmezhidemai": "smzdm.png",
           "douban": "douban.png",
+          "douban_group": "douban.png",
           "kr36": "36kr.png",
           "GitHub": "github.png",
           "v2ex": "",
