@@ -13,6 +13,11 @@ date_default_timezone_set('Asia/Shanghai');
 class FetchHotData {
 
     /**
+     * .env文件设置的环境变量
+     */
+    protected $SYS_ENV = [];
+
+    /**
      * 脚本目录
      */
     protected $scriptDir = __DIR__ . '/script';
@@ -31,12 +36,15 @@ class FetchHotData {
 
     public function __construct()
     {   
+        // 命令行中的参数
         global $argv, $argc;
         $argvList = [];
         for ($i = 1; $i < count($argv); $i++) { // 跳过索引0，它是脚本名
             $argvList[] = $argv[$i];
         }
         // var_dump($argvList);die;
+
+        $this->startLoadEnv();
 
         if (in_array('checkEmpty', $argvList)) {
             // 仅执行检查
@@ -48,6 +56,38 @@ class FetchHotData {
         $this->getAllScript();
         $this->startApp();
         $this->cheackEmptyRetry();
+    }
+
+    public function startLoadEnv() {
+        $defEnvDir = __DIR__ . '/.env';
+        $productionEnvDir = __DIR__ . '/.env.production';
+        $developmentEnvDir = __DIR__ . '/.env.development';
+        $reEnv1 = [];
+        if (file_exists($productionEnvDir)) {
+            $reEnv1 = $this->parseFileEnv($productionEnvDir);
+        } else if (file_exists($developmentEnvDir)) {
+            $reEnv1 = $this->parseFileEnv($developmentEnvDir);
+        }
+
+        $defEnv = $this->parseFileEnv($defEnvDir);
+        $this->SYS_ENV = array_merge($defEnv, $reEnv1);
+    }
+
+    public function parseFileEnv($filePath) {
+        if (!file_exists($filePath)) { return false; }
+        $envRes = [];
+      
+        $lines = file($filePath, FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES);
+        foreach ($lines as $line) {
+          if (strpos(trim($line), '#') === 0) { continue; }
+      
+          if (preg_match('/\A([^\s=]+)\s*=\s*(["\']?)(.*)\2\z/', $line, $matches)) {
+            $key = trim($matches[1]);
+            $value = trim($matches[3], "\"'");
+            $envRes[$key] = $value;
+          }
+        }
+        return $envRes;
     }
 
     public function startApp() 
@@ -190,6 +230,11 @@ class FetchHotData {
             }
 
             $filePath = $this->allFileScript[$i];
+            // putenv 设置的环境变量在当前进程及其子进程中有效。
+            foreach ($this->SYS_ENV as $envKey => $envValue) {
+                $envStr = $envKey . '=' . $envValue;
+                putenv($envStr);
+            }
             // 通过命令行执行PHP文件
             $command = escapeshellcmd("php $filePath");
 

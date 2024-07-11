@@ -8,12 +8,13 @@
 /
  ├── 📂script   # 所有获取热点数据脚本
  ├── 📂articles # 获取热点数据后保存到这
+ ├── 📂html     # 前端代码
+ ├── 📂api
+ │   └── getHotData.php # 给前端的api; 将 📂articles 目录下的数据聚合json返回
  ├── 📂logs     # 日志
  ├── main.php   # 入口文件, 调用`FetchHotData.php`或`FetchHotDataMulti.php`
  ├── FetchHotData.php       # 单进程执行
  ├── FetchHotDataMulti.php  # 多进程执行
- ├── 📂api
- │   └── getHotData.php # 将 📂articles 目录下的数据聚合json返回
  └── README.md
 ```
 
@@ -80,11 +81,11 @@ server {
 }
 ```
 
+前端页面配置
 > 部署生产环境时，在`html/`目录下创建`.env.production`文件。    
 > 并在`nginx`设置`fastcgi_param APP_ENV production;`    
 > 若在开发环境下，不配置`fastcgi_param APP_ENV production;` 即可。
 
-在env文件里，可配置
 
 ### 目前平台：
 
@@ -111,5 +112,6 @@ server {
 + 虎扑(篮球、足球、步行街)
 + 360搜索  
 + 什么值得买-好价排行榜       
-+ 游戏葡萄            
++ 游戏葡萄    
++ 豆瓣小组            
 ...完整见`script`目录               

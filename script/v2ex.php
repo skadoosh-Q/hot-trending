@@ -3,15 +3,22 @@ date_default_timezone_set('Asia/Shanghai');
 header('Content-Type: application/json; charset=utf-8');
 function v2ex() {
 	$urls = "https://www.v2ex.com/?tab=hot";
-	$context = stream_context_create([
-	    "http" => [
-	        "header" => "User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36",
-          // 'proxy' => "tcp://127.0.0.1:7890",
-          // 'proxy' => "tcp://192.168.0.120:7890",
-          'timeout' => 10 // 秒
-      ],
-	]);
-	
+
+	$opt = [
+		"http" => [
+				"header" => "User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36",
+				// 'proxy' => "tcp://127.0.0.1:7890",
+				// 'proxy' => "tcp://192.168.0.120:7890",
+				'timeout' => 10 // 秒
+		],
+		'ssl'=> ['verify_peer' => false, 'verify_peer_name' => false]
+	];
+	$proxySetting = getenv('HTTP_PROXY');
+	if ($proxySetting) {
+		$opt["http"]["proxy"] = $proxySetting;
+	}
+
+	$context = stream_context_create($opt);
 	$html = file_get_contents($urls, false, $context);
 	
 	// 获取响应头中的Content-Type信息
