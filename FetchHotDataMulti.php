@@ -26,6 +26,8 @@ class FetchHotDataMulti extends FetchHotData {
         }
         // var_dump($argvList);die;
 
+        $this->startLoadEnv();
+
         if (in_array('checkEmpty', $argvList)) {
             // 仅执行检查
             $this->cheackEmptyRetry();
