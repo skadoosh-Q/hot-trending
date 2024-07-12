@@ -20,7 +20,7 @@
 
 ### 使用
 
-php需要开启函数`exec`, `pcntl_fork`, `pcntl_waitpid`, `pcntl_wifexited`, `pcntl_wexitstatus`, `pcntl_wifsignaled`, `pcntl_wtermsig`。
+php需要开启函数`exec`, `pcntl_fork`, `pcntl_waitpid`, `pcntl_wifexited`, `pcntl_wexitstatus`, `pcntl_wifsignaled`, `pcntl_wtermsig`,`putenv`。
 
 抓取数据; (自行配置定时任务，例如配合宝塔的定时任务功能)
 ```shell
